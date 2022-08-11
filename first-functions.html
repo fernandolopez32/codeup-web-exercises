@@ -72,35 +72,83 @@
 //         console.log(`Shakespeare said: "All the world's a stage"`);
 // //temple literals `${}
 //         console.log(`${myFullName}${myTittle}`);
+//
+//         function fullName(myFirstName,myLastName){
+//            return `${myFirstName} ${myLastName}`;
+//         }
+//         function address(houseNumber, streetName, city, state, zipcode){
+//             return `${houseNumber} ${streetName}, ${city}, ${state} ${zipcode}`;
+//         }
+//         function temperatureConversion(temperature, isFahrenheit){
+//             if (isFahrenheit === true) {
+//                 return (temperature - 32) * 5 / 9;
+//             } else {
+//                 return (temperature * 9 / 5) + 32;
+//             }
+//         }
+//         function bonusFunction(unit, isMiles) {
+//             if (isMiles === true) {
+//                 return (unit * 1.60934);
+//             } else {
+//                 return (unit / 1.60934);
+//             }
+//         }
+//         function bonusFunction2(unit, isGallons) {
+//             if (isGallons === true) {
+//                 return (unit / 0.264172);
+//             } else {
+//                 return (unit * 0.264172);
+//
+//                 }
+//             }
+//         let name = "fernando"
+        // EXERCISES//
 
-        function fullName(myFirstName,myLastName){
-           return `${myFirstName} ${myLastName}`;
-        }
-        function address(houseNumber, streetName, city, state, zipcode){
-            return `${houseNumber} ${streetName}, ${city}, ${state} ${zipcode}`;
-        }
-        function temperatureConversion(temperature, isFahrenheit){
-            if (isFahrenheit === true) {
-                return (temperature - 32) * 5 / 9;
-            } else {
-                return (temperature * 9 / 5) + 32;
-            }
-        }
-        function bonusFunction(unit, isMiles) {
-            if (isMiles === true) {
-                return (unit * 1.60934);
-            } else {
-                return (unit / 1.60934);
-            }
-        }
-        function bonusFunction2(unit, isGallons) {
-            if (isGallons === true) {
-                return (unit / 0.264172);
-            } else {
-                return (unit * 0.264172);
+        // function allCaps(string){
+        //     return string.toUpperCase()
+        // }
+        // function allLower(string){
+        //     return string.toLowerCase()
+        // }
+        //
+        // function removingBlank(string){
+        //     return string.trim()
+        // }
+        // function countStringCharacters(string){
+        //     return string.length
+        // }
+        // function specifiedString(char, sting){
+        //     return sting.indexOf(char)
+        // }
 
+        //== vs. ===//
+
+        // let numericString = "32";
+        // let theAnswer = 32;
+        //
+        // function dataType(value){
+        //     return typeof value;
+        // }
+        // let someValue = "32"
+        // if (dataType(someValue) === "number") {
+        //     console.log("thats a number");
+        // }else {
+        //     console.log("thats not a number");
+        // }
+        // function isNumber(value){
+        //     return typeof value === "number";
+        // }
+        function dataType(value){
+            if (isNaN(value) || typeof value === "boolean") {
+                return false;
+            }else{
+                    return true;
                 }
             }
+
+
+
+
 
     </script>
 
