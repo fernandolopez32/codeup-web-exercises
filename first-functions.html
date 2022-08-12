@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>First functions</title>
+
 </head>
 <body>
+    <style>
+        /* to not strain my eyes */
+        body {
+            color: white;
+        background-color: black;
+        }
+        /* MY REVOLT ENDS*/
+    </style>
     <script>
         // function calculateCircumference(radius) {
         //     const pi = 3.14159
@@ -138,13 +147,16 @@
         // function isNumber(value){
         //     return typeof value === "number";
         // }
-        function dataType(value){
-            if (isNaN(value) || typeof value === "boolean") {
-                return false;
-            }else{
-                    return true;
-                }
-            }
+        function replaceFirstStringWithCharacter(string1, string2, char){
+            return string1 + " " + string2.replace(char)
+        }
+        // function dataType(value){
+        //     if (isNaN(value) || typeof value === "boolean") {
+        //         return false;
+        //     }else{
+        //             return true;
+        //         }
+        //     }
 
 
 
