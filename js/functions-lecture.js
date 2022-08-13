@@ -22,7 +22,7 @@
 //     console.log(number);
 // }
 // // global and local at the same time
-// function declaratins
+// function declaring
 // let number = 20;
 // function localOrGlobal(){
 //     let number = 10;

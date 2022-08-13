@@ -18,7 +18,7 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-let helloMessage = sayHello("Fernando")
+let helloMessage = sayHello("Areli")
 console.log(helloMessage )
 /**
  * TODO:
@@ -96,5 +96,6 @@ alert (calculatedTotalWithTip.toFixed(2))
 function appliedDiscount (price, discount){
     return price - (price * discount.toFixed(2));
 }
+
 
 

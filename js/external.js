@@ -33,19 +33,21 @@ let noScheduleConflict = confirm("is there no conflict");
 let canEnroll = classNotFull && noScheduleConflict;
 
 if (canEnroll){
-    alert("you can enroll:")
-}else{
-    alert ("you cant enroll");
-
+    alert("you can enroll:");
+}else {
+    alert("you cant enroll");
+}
 //SCENARIO 4
 
 let numberOfItemsBought = prompt("how many items were purchased");
 let offerExpired = confirm("has the offer expired?");
 let premiumMember = confirm("is the customer premium member?");
-let makeProductOffer = (premiumMember || numberOfItemsBought >2)&&
+let makeProductOffer = (premiumMember || numberOfItemsBought > 2) &&
     !offerExpired;
-if makeProductOffer{
-    alert("you bet a product offer ")
-}else {
 
+if (makeProductOffer) {
+    alert("you bet a product offer ");
+} else {
+    alert("you are broke, sorry.");
 }
+
