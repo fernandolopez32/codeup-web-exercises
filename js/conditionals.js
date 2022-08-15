@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 /* ########################################################################## */
 
@@ -21,13 +21,19 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-//
+
 // function analyzeColor(color) {
 //     if (color === "blue") {
 //         return "Blue like the sky";
-//     } else if (color === "brown") {
-//         return "Brown like dirt";
-//     } else {
+//     } else if (color === "orange") {
+//         return "Orange like pumpkins";
+//     } else if (color === "yellow") {
+//         return "yellow like bananas";
+//     } else if (color === "red") {
+//         return "Red like stop signs";
+//     } else if (color === "green") {
+//         return "Green like my grass at home";
+//     } else  {
 //         return ("I dont know anything about " + color);
 //     }
 // }
@@ -57,6 +63,18 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //         break;
 //     case ("brown"):
 //         alert("Brown like the dirt on the ground");
+//         break;
+//     case ("orange"):
+//         alert("orange like pumpkins");
+//         break;
+//     case ("yellow"):
+//         alert("yellow like bananas");
+//         break;
+//     case ("red"):
+//         alert("red like stop signs");
+//         break;
+//     case ("green"):
+//         alert("green like the grass on my yard");
 //         break;
 //     default:
 //         alert("I do not know anything of that color,  sorry");
@@ -92,22 +110,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 
-function calculateTotal(luckyNumber, total) {
-    if (luckyNumber === 0) {
-        return "Your total is " + total;
-    } else if (luckyNumber === 1) {
-        return total -(total * .10);
-    } else if (luckyNumber === 2) {
-        return total - (total * .25);
-    } else if (luckyNumber === 3) {
-        return total - (total * .35);
-    } else if (luckyNumber === 4) {
-        return total - (total * .5);
-    } else if (luckyNumber === 5) {
-        return 0;
-    }
-}
-
+// function calculateTotal(luckyNumber, total) {
+//     if (luckyNumber === 0) {
+//         return "Your total is " + total;
+//     } else if (luckyNumber === 1) {
+//         return total -(total * .10);
+//     } else if (luckyNumber === 2) {
+//         return total - (total * .25);
+//     } else if (luckyNumber === 3) {
+//         return total - (total * .35);
+//     } else if (luckyNumber === 4) {
+//         return total - (total * .5);
+//     } else if (luckyNumber === 5) {
+//         return 0;
+//     }
+// }
+//
 
 
 /**
@@ -122,9 +140,9 @@ function calculateTotal(luckyNumber, total) {
 //  var luckyNumber = Math.floor(Math.random() * 6);
 //
 //  let total = prompt("What is you total bill?");
-// alert("Your price before discount is " + total);
+// alert("Your price before discount is " + total+ "\n"+ "Your lucky number is " + luckyNumber+"\n"+ "Your total after discount is: " + calculateTotal(luckyNumber, total);
 // alert("Your lucky number is " + luckyNumber);
-// alert("Your total after discount is: " + calculateTotal(luckyNumber, total));
+//alert("Your total after discount is: " + calculateTotal(luckyNumber, total));
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -143,25 +161,36 @@ function calculateTotal(luckyNumber, total) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-let confirmQuestion = confirm("Would you like to enter a number?")
 
+//
 function isEven(number) {
-    if (number % 2 === 0);
+    return  number % 2 === 0 ? number + " is even":number + "is odd";
 }
 function isPositive(number) {
-    (Math.sign(number))
+    return number < 0 ? number + " is a negative number": number + "is positive";
+
 }
 
 function numberAdd100(number){
-    return (number + 100);
+    return (number + "plus 100" +(number + 100));
+}
+
+function getNumber(){
+    if (confirm("Would you like to enter a number?")){
+        return parseFloat(prompt(number));
+    }
 }
 
 
+let confirmQuestion = confirm("Would you like to enter a number?")
 if (confirmQuestion) {
-    let number = prompt("Enter your number here");
-    alert (isEven());
-    alert (numberAdd100());
-    alert (isPositive());
+    let number = parseFloat(prompt("Enter your number here"));
+   // if (isNumber(number)){}
+    alert(isEven(number));
+    alert(isPositive(number));
+    alert(numberAdd100(number));
+    } else {
+    alert("incorrect input data type")
 }
 
 
