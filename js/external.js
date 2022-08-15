@@ -59,4 +59,3 @@ let passwordLongEnough = password.length >= 5;
 let passwordValid = password !== username;
 let usernameLength = password.length <= 20;
 let whiteSpaceCheck = password.endsWith(" ") ||password.startsWith(" ") || username.endsWith(" ")||username.startsWith(" ");
-
