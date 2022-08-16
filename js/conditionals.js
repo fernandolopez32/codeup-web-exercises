@@ -163,35 +163,39 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 //
-function isEven(number) {
-    return  number % 2 === 0 ? number + " is even":number + "is odd";
+function isNumber(value){
+return !(isNaN(value)) || typeof value === "boolean";
 }
-function isPositive(number) {
-    return number < 0 ? number + " is a negative number": number + "is positive";
 
+function isEven(number) {
+    return  number % 2 === 0 ? number + " is even":number + " is odd";
+}
+
+function isPositive(number) {
+    return number < 0 ? number + " is a negative number": number + " is positive";
 }
 
 function numberAdd100(number){
-    return (number + "plus 100" +(number + 100));
+    return number + " plus 100 equals " + (number+100);
 }
 
 function getNumber(){
     if (confirm("Would you like to enter a number?")){
-        return parseFloat(prompt(number));
+        return parseFloat(prompt("Enter number: "));
     }
 }
 
-
-let confirmQuestion = confirm("Would you like to enter a number?")
-if (confirmQuestion) {
-    let number = parseFloat(prompt("Enter your number here"));
-   // if (isNumber(number)){}
-    alert(isEven(number));
-    alert(isPositive(number));
-    alert(numberAdd100(number));
+function analyzeNumber(number) {
+    if (number === undefined){
+        return false;
+    }
+    if (isNumber(number)) {
+        alert(isEven(number));
+        alert(isPositive(number));
+        alert(numberAdd100(number));
     } else {
-    alert("incorrect input data type")
+        alert("incorrect input data type");
+    }
+
 }
-
-
-
+analyzeNumber((getNumber()));
