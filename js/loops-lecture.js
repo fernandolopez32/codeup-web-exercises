@@ -42,19 +42,26 @@
 //         alert("your total is not" + total);
 //     }
 // }
-let total = 0;
-let priceOfItem;
-while(true){
-    let userInput = prompt("Enter the price of your item:" + "\n Enter STOP when you are done");
-    if (userInput === "STOP"){
-        alert("Your final total is " + total.toFixed(2));
-        break;
-    } else {
-        priceOfItem = parseFloat(userInput);
-        total = total + priceOfItem;
-        alert("Your final total is " + total.toFixed(2));
-    }
-}
+// let total = 0;
+// let priceOfItem;
+// while(true){
+//     let userInput = prompt("Enter the price of your item:" + "\n Enter STOP when you are done");
+//     if (userInput === "STOP"){
+//         alert("Your final total is " + total.toFixed(2));
+//         break;
+//     } else {
+//         priceOfItem = parseFloat(userInput);
+//         total = total + priceOfItem;
+//         alert("Your final total is " + total.toFixed(2));
+//     }
+// }
+
+let number = Math.ceil(Math.random())*6;
+let guess ;
+do{
+    guess = parseInt(prompt("Enter a number between one and six"));
+} while (guess !== number);
+alert(`Your guess of ${guess} is correct`);
 
 
 
