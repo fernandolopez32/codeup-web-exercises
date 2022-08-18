@@ -84,7 +84,7 @@
 // }
 // console.log("outside the loop : " + i);
 
-for ( i = 0; i<100; i++){
-    console.log(i)
+for ( let i = 0; i<100; i++){
+    console.log(i);
 }
-console.log(i)
+

@@ -37,3 +37,14 @@
 // for (let i = 100; i >= 5; i-= 5){
 //     console.log(i)
 // }
+// let string = "";
+// for (let i = 0; i<7; i++) {
+//
+//     let word = prompt("Lets make a sentence! Enter a word: ");
+//     if (word === "curses") {
+//     console.log("that word is not allowed!")
+//     break;
+// }
+//     string += " " + word;
+//     console.log("your sentence is " + string)
+// }
