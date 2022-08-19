@@ -1,7 +1,8 @@
 
 // declaring an array literal:
 // each item in an array is called an element and are zero index
-// let groceryList = ['bread', 'eggs','butter', 'milk']
+let groceryList = ['bread', 'eggs','butter', 'milk']
+console.log(groceryList);
 //
 // for (let i=0; i < groceryList.length; i++) {
 //     if (i === groceryList.length - 1) {
@@ -44,16 +45,78 @@ let texasCities = ['San Antonio','Houston', 'Dallas', 'El Paso'];
 // the second and third parameters are optional
 
 let prices = [32.99, 21.99, 6.99,4.99,12.99,8.98, 5.99];
-
-prices.forEach(function (price, index){
-    console.log("item number " + index + " cost "  +price);
-});
-function x(para1, para2){
-
-}
+//
+// prices.forEach(function (price, index){
+//     console.log("item number " + index + " cost "  +price);
+// });
+// function x(para1, para2){
+//
+// }
 //
 // const x = (para1, para2) =>
 
 
 // since the functions are anonymous we can use arrow sintax
 // prices.forEach((price,index) => return  )
+
+
+// add and remove form the end
+groceryList.push("potatoes", "tomatoes", "onion", "soup");
+console.log(groceryList);
+groceryList.pop();
+console.log(groceryList);
+
+//shift takes away form the
+
+groceryList.unshift("hot fries","queso");
+console.log(groceryList);
+groceryList.shift();
+
+let indexOfButter = groceryList.indexOf("butter");
+console.log(indexOfButter);
+
+//substitute  something at any know index by assigning a new value at that point
+
+groceryList[indexOfButter] = "peanut butter";
+console.log(groceryList);
+
+//slicing
+let firstHalfOfGroceryList = groceryList.slice(0,4);
+console.log(firstHalfOfGroceryList);
+let secondHalfOfGroceryList = groceryList.slice(4);
+console.log(secondHalfOfGroceryList);
+
+//add something in the middle of an array
+firstHalfOfGroceryList.push("butter");
+groceryList = firstHalfOfGroceryList.concat(secondHalfOfGroceryList);
+console.log(groceryList);
+//reverse
+groceryList.reverse();
+console.log(groceryList);
+//sort
+groceryList.sort();
+console.log(groceryList.reverse());
+
+
+
+prices.sort(function(a,b){
+    return a-b;
+})
+console.log(prices);
+
+
+groceryList[4] = "Zebras";
+console.log(groceryList)
+console.log(groceryList.sort());
+
+// groceryList.forEach(item => item = item.toLowerCase());
+// console.log()
+
+groceryList.forEach((item, index, array) =>{
+  array[index] = item.toLowerCase();
+})
+console.log(groceryList);
+// for ( let i = 0; i< groceryList.length; i++){
+//     groceryList[i] = groceryList[i].toLowerCase();
+//}
+
