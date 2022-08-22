@@ -5,7 +5,7 @@ let currentWeather = {
     clouds: 75
 }
 console.log(currentWeather.temp);
-
+†
 let fighter = {
     name: "Arata",
     hitPoints: 18,
