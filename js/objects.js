@@ -1,6 +1,6 @@
 
 
-//(function() {
+(function() {
     "use strict";
 
     /**
@@ -81,10 +81,6 @@ let books = [
         {title: "book4", author: {firstName: "author4", lastName: "last4"}},
         {title: "book5", author: {firstName: "author5", lastName: "last5"}}
     ]
-
-
-
-
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -110,10 +106,8 @@ let books = [
      *      ...
      */
 for (let i = 0; i < books.length; i++){
-    console.log(` Book number ${[i +1]}  ${books[i].title} was written By: ${books[i].author.firstName} ${books[i].author.lastName}`);
+    console.log(` Book number ${[i +1]} \n ${books[i].title} \n ${books[i].author.firstName} ${books[i].author.lastName}`);
 }
-
-
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -124,5 +118,15 @@ for (let i = 0; i < books.length; i++){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+function createBook(title, firstName, lastName) {
+        return {
+            title: title,
+            author: {
+            firstName: firstName,
+            lastName: lastName
+            }
+        }
+    }
 
-//})();
+
+})();
