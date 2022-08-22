@@ -104,28 +104,28 @@
 // console.log(currentWeather.uvIndex);
 
 //
-let fighter = {
-    name: "Arata",
-    hitPoints: 18,
-    maxDamage: 8,
-    attack: function (opponent){
-        console.log((opponent.name + " has " + opponent.hitPoints + " hit points"))
-        console.log(this.name + " attack!");
-        let damage = Math.ceil(Math.random() * this.maxDamage);
-        console.log((this.name + " does "+ damage + " points of damage"));
-        opponent.hitPoints -= damage;
-        console.log(opponent.name + " now has "+ opponent.hitPoints + " hit points.");
-    }
-}
-
-let monster = {
-    name: "goblin",
-    hitPoints: 8,
-    maxDamage: 6,
-    attack: function () {
-        console.log(this.name + " attack!");
-    }
-}
+// let fighter = {
+//     name: "Arata",
+//     hitPoints: 18,
+//     maxDamage: 8,
+//     attack: function (opponent){
+//         console.log((opponent.name + " has " + opponent.hitPoints + " hit points"))
+//         console.log(this.name + " attack!");
+//         let damage = Math.ceil(Math.random() * this.maxDamage);
+//         console.log((this.name + " does "+ damage + " points of damage"));
+//         opponent.hitPoints -= damage;
+//         console.log(opponent.name + " now has "+ opponent.hitPoints + " hit points.");
+//     }
+// }
+//
+// let monster = {
+//     name: "goblin",
+//     hitPoints: 8,
+//     maxDamage: 6,
+//     attack: function () {
+//         console.log(this.name + " attack!");
+//     }
+// }
 
 // method definitions cannot use arrow functions if you are not using "this."
 
@@ -167,7 +167,38 @@ let model = {
     }
 }
 
+// controller.attack(fighter,monster);
+// controller.attack(monster,fighter);
 
+// Creating objects
+//Define a empty object and create properties dynamically
+let goblin = {}
+goblin.name = "Goblin";
 
-controller.attack(fighter,monster);
-controller.attack(monster,fighter);
+//Create a function that returns objects
+
+function makeMonster(name, hitPoints, maxDamage){
+   return{
+   name: name,
+   hitPoints: hitPoints,
+   maxDamage: maxDamage
+   }
+}
+
+// model.hobgoblin = makeMonster("Hobgoblin",11 ,11);
+// controller.attack(model.hobgoblin,model.fighter);
+
+// use an object constructor
+
+function Monster(name, hitPoints, maxDamage){
+    this.name = name ;
+    this.hitPonts = hitPoints;
+    this.maxDamage = maxDamage;
+}
+
+model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
+controller.attack(model.hobgoblinCaptain, model.fighter);
+
+// for (let property in model){
+//     console.log(model[property].name);
+// }

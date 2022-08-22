@@ -44,11 +44,22 @@ let person = {
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+
+
+    let shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function (message){
+        if(message.amount <200){
+            console.log(`${message.name} owes ${message.amount} you do not get a discount. You must pay ${message.amount}`);
+        }else if (message.amount > 200){
+            console.log(`${message.name} owes ${message.amount} before discount of 12%. And your new total is ${message.amount - message.amount *.12}`)
+        }
+    });
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -62,6 +73,17 @@ let person = {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+let books = [
+        {title: "book1", author: {firstName: "author1", lastName: "last1"}},
+        {title: "book2", author: {firstName: "author2", lastName: "last2"}},
+        {title: "book3", author: {firstName: "author3", lastName: "last3"}},
+        {title: "book4", author: {firstName: "author4", lastName: "last4"}},
+        {title: "book5", author: {firstName: "author5", lastName: "last5"}}
+    ]
+
+
+
 
     /**
      * TODO:
