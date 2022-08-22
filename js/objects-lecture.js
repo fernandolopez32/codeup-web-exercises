@@ -202,3 +202,30 @@ controller.attack(model.hobgoblinCaptain, model.fighter);
 // for (let property in model){
 //     console.log(model[property].name);
 // }
+
+// Object Destructuring
+
+const car= {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2020,
+    mileage: 12657
+}
+
+// let make = car.make;
+// let carModel = car.model;
+// console.log(make);
+// console.log(carModel);
+
+const{ make, carModel, year, mileage} = car;
+console.log(make);
+console.log(model);
+console.log(year);
+console.log(mileage);
+
+const outputCarInfo = ({make, model,year,mileage}= car) =>
+{console.log(`${year} ${make} ${model} with ${mileage}`)}
+outputCarInfo(car);
+
+
+
