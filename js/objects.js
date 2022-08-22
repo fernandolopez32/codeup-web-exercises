@@ -1,6 +1,6 @@
-prompt("hi");
 
-(function() {
+
+//(function() {
     "use strict";
 
     /**
@@ -27,11 +27,9 @@ let person = {
          * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
          */
         sayHello: function(){
-            return "Hello from " + person.firstName +" "+ person.lastName+ "!"
+            return  "Hello from " + person.firstName +" "+ person.lastName+ "!";
         }
-
 }
-    console.log(sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -101,4 +99,4 @@ let person = {
      *   `showBookInfo` function.
      */
 
-})();
+//})();
