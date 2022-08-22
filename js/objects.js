@@ -1,6 +1,6 @@
 
 
-(function() {
+//(function() {
     "use strict";
 
     /**
@@ -27,9 +27,10 @@ let person = {
          * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
          */
         sayHello: function(){
-            return  "Hello from " + person.firstName +" "+ person.lastName+ "!";
+            return  "Hello from " + this.firstName +" "+ this.lastName+ "!";
         }
 }
+console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -60,6 +61,11 @@ let person = {
         }
     });
 
+// shoppers.forEach(function (shopper){
+//     let discount = (shopper.amount>200 ? shopper.amount * .12: 0).toFixed(2);
+//     let total = (shopper.amount - discount).toFixed(2);
+//     console.log(`${shopper.name} -- total: $ ${shopper.amount}, discount: $${discount}, final amount $${total}`)
+// });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -107,7 +113,15 @@ let books = [
      */
 for (let i = 0; i < books.length; i++){
     console.log(` Book number ${[i +1]} \n ${books[i].title} \n ${books[i].author.firstName} ${books[i].author.lastName}`);
+    console.log(" ---");
 }
+
+// books.forEach(function (book,index){
+//     console.log(`Book #${index + 1} `);
+//     console.log("Title" + book.title);
+//     console.log(`Author ${book.author.firstName} ${book.author.lastName}`);
+//     console.log("---");
+// });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -118,15 +132,45 @@ for (let i = 0; i < books.length; i++){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-function createBook(title, firstName, lastName) {
+function createBook(title, authorFirstName, authorLastName) {
         return {
             title: title,
             author: {
-            firstName: firstName,
-            lastName: lastName
+                firstName: authorFirstName,
+                lastName: authorLastName
             }
         }
     }
 
+    books.push(createBook("The Great Gatsby", "F. Scott", "Fitzgerald"));
 
-})();
+function book(title , firstName, lastName){
+    this.title = title;
+    this.author = {
+        firstName: firstName,
+        lastName: lastName
+    }
+}
+//let nineteenEightyFour = (new Book("1984","George", "Orwell"));
+books.push(new book("1984", "Geaorge", "Orwell"));
+
+for (let i = 0; i < books.length; i++){
+    console.log(` Book number ${[i +1]} \n ${books[i].title} \n ${books[i].author.firstName} ${books[i].author.lastName}`);
+    console.log(" ---");
+}
+
+function showBookInfo(book, index){
+    if(index!== undefined){
+        console.log(`Book #${index + 1} `);
+    }
+    console.log("Title" + book.title);
+    console.log(`Author ${book.author.firstName} ${book.author.lastName}`);
+}
+
+books.forEach(function (book, index){
+   // console.log(`Book #${index + 1} `);
+    showBookInfo(book, index);
+});
+//showBookInfo(nineteenEightyFour);
+
+//})();
