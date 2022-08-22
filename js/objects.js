@@ -109,6 +109,10 @@ let books = [
      *      ---
      *      ...
      */
+for (let i = 0; i < books.length; i++){
+    console.log(` Book number ${[i +1]}  ${books[i].title} was written By: ${books[i].author.firstName} ${books[i].author.lastName}`);
+}
+
 
     /**
      * Bonus:
