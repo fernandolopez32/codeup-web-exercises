@@ -6,54 +6,83 @@
         <meta charset="UTF-8">
 
         <title>HTML Lecture</title>
+        <style>
+            body {
+                background: black;
+                color: white;
+            }
+            a{
+                color: azure;
+            }
+            header{
+                text-align: center;
+                border: 2px solid white;
+                padding: 5px;
+            }
+        </style>
 
     </head>
     <body>
-        <h1> Fernando Lopez</h1>
-        <h2>Full Stack Web Developer in training</h2>
-        <p> I am not a full stack web developer yet.</p>
-        <!-- paragraph tags Mark up content
-        HTML stand for HyperText Markup Language-->
-        <p> This is my second paragraph that I have typed today.</p>
-        <h2>Languages I want to know </h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>java</li>
-            <li>python</li>
-        </ul>
-        <h2> list of things in order</h2>
-        <ol>
-            <li>thing 1 </li>
-            <li>thing 2</li>
-            <li>thing 3</li>
-            <li>thing 4</li>
-            <li>thing 5</li>
-        </ol>
-        <h2>Prices</h2>
-    <table>
-        <tr>
-            <th>service</th>
-            <th>price</th>
-            <th>time to complete</th>
-        </tr>
-        <tr>
-            <td>basic web page</td>
-            <td>1000</td>
-            <td>1 week</td>
-        </tr>
-        <tr>
-            <td>5 page website</td>
-            <td>5000</td>
-            <td>3 weeks</td>
-        </tr>
-        <tr>
-            <td>basic e-commerce site</td>
-            <td>12000</td>
-            <td>6 weeks</td>
-        </tr>
-    </table>
-    <hr>
-    <a href = "quotes.html">Inspirational Quotes</a>
+        <header>
+            <h1> Fernando Lopez</h1>
+            <h2>Full Stack Web Developer in training</h2>
+            <img src = "img/fernando.png"alt="computer representation of Fernando Lopez">
+        </header>
+        <main>
+            <section>
+                <p> I am not a full stack web developer yet.</p>
+                <!-- paragraph tags Mark up content
+                HTML stand for HyperText Markup Language-->
+                <p> This is my second paragraph that I have typed today.</p>
+                <h2>Languages I want to know </h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>java</li>
+                    <li>python</li>
+                </ul>
+                <h2 id="things"> list of things in order</h2>
+                <ol>
+                    <li>thing 1 </li>
+                    <li>thing 2</li>
+                    <li>thing 3</li>
+                    <li>thing 4</li>
+                    <li>thing 5</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Prices</h2>
+                <table>
+                    <tr>
+                        <th>service</th>
+                        <th>price</th>
+                        <th>time to complete</th>
+                    </tr>
+                    <tr>
+                        <td>basic web page</td>
+                        <td>1000</td>
+                        <td>1 week</td>
+                    </tr>
+                    <tr>
+                        <td>5 page website</td>
+                        <td>5000</td>
+                        <td>3 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>basic e-commerce site</td>
+                        <td>12000</td>
+                        <td>6 weeks</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <hr>
+        <footer>
+            <a href = "#"> Contact Us</a>
+            <a href="#things">list of things</a>
+
+            <a href = "quotes.html">Inspirational Quotes</a>
+
+        </footer>
 
     </body>
 </html>
