@@ -227,5 +227,3 @@ const outputCarInfo = ({make, model,year,mileage}= car) =>
 {console.log(`${year} ${make} ${model} with ${mileage}`)}
 outputCarInfo(car);
 
-
-

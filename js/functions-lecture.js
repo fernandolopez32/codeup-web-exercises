@@ -22,7 +22,7 @@ function localOrGlobal2(){
     console.log(number);
 }
 // global and local at the same time
-function declaring
+//function declaring
 let number = 20;
 function localOrGlobal(){
     let number = 10;
@@ -59,7 +59,7 @@ const add = (num1, num2) => num1+num2;
 // if there is onl one parameter, you do not need parentheses
 const addTen = number => number + 10;
 // if there is no parameters, you use empty parentheses
-const helloWorld = () =>"hello world"
+const helloWorld = () =>"hello world";
 
 
 
