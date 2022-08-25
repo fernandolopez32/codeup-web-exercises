@@ -28,7 +28,7 @@ let stringArray = ["jabba", "darth maul", "hondo"];
 
 function longestString(arrayOfString){
     let longest = '';
-    for (let i = 0; i<arrayOfString; i++){
+    for (let i = 0; i<arrayOfString.length; i++){
         if (arrayOfString[i].length > longest.length) longest = arrayOfString[i];
     }
     return longest;
