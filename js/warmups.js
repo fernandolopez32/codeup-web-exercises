@@ -1,8 +1,6 @@
-function isANumber(value) {
-    return !(isNaN(value) || typeof value === "boolean" || value === null);
-}
+
 // My failed attempt
-// let numberArray = [1,2,4,6];
+ let Array = [5,10,15];
 //
 //
 // function average(input){
@@ -14,3 +12,24 @@ function isANumber(value) {
 //    // }
 // }
 
+function arrayAverage(array){
+    // total accumulator variable
+    let total = 0;
+    for (let i = 0; i < array.length; i++){
+        if(!isNumber(array[i]))
+            {return false;}
+        total += array[i];
+    }
+    return total/array.length;
+}
+
+
+let stringArray = ["jabba", "darth maul", "hondo"];
+
+function longestString(arrayOfString){
+    let longest = '';
+    for (let i = 0; i<arrayOfString; i++){
+        if (arrayOfString[i].length > longest.length) longest = arrayOfString[i];
+    }
+    return longest;
+}
