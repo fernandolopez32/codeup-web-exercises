@@ -6,14 +6,23 @@
   </head>
   <body>
     <form method="post"> <!--          action="http://request-inspector.glitch.mi/">-->
-        <label for="email">Email: </label><br>
+        <section id="userInformation">
+            <label for="email">Email&colon; </label>
+                <br>
             <input id="email" type="text" name="email" placeholder="Enter your email here">
-            <br>
-        <label for="password">Password</label><br>
+                <br>
+            <label for="password">Password&colon;</label>
+                <br>
             <input id="password" type="password" name="password" placeholder="Your password">
-            <br>
-        <textarea name="bio" placeholder="Enter a short self biography."></textarea>
+                <br>
+            <label for="bio">Bio&colon;</label>
+                <br>
+            <textarea id="bio" name="bio" placeholder="Enter a short self biography."></textarea>
+        </section>
+        <section id="questionnaire">
+            <input type="radio" name="How did you hear about us&quest;">
 
+        </section>
     </form>
 
   </body>
