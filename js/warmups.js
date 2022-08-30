@@ -159,4 +159,20 @@ function beeramid(bonus, price){
     return levels;
 }
 
+var fred = {
+    firstName: 'Fred',
+    lastName: 'Smith',
+    email: 'fred@email.com',
+    username: 'fred123',
+    password: 'pass123'
+}
+
+function getSimpleUser(userObject){
+    return {
+        firstName: userObject.firstName.toLowerCase(),
+        lastName: userObject.lastName.toLowerCase()
+    }
+}
+console.log(getSimpleUser(fred));
+
 
