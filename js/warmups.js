@@ -189,4 +189,3 @@ function createNames(firstNamesArray,lastNamesArray){
     return accumulator;
 }
 
-//
