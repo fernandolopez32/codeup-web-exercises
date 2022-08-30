@@ -159,20 +159,34 @@ function beeramid(bonus, price){
     return levels;
 }
 
-var fred = {
-    firstName: 'Fred',
-    lastName: 'Smith',
-    email: 'fred@email.com',
-    username: 'fred123',
-    password: 'pass123'
-}
+// var fred = {
+//     firstName: 'Fred',
+//     lastName: 'Smith',
+//     email: 'fred@email.com',
+//     username: 'fred123',
+//     password: 'pass123'
+// }
+//
+// function getSimpleUser(userObject){
+//     return {
+//         firstName: userObject.firstName.toLowerCase(),
+//         lastName: userObject.lastName.toLowerCase()
+//     }
+// }
+//console.log(getSimpleUser(firstNames));
 
-function getSimpleUser(userObject){
-    return {
-        firstName: userObject.firstName.toLowerCase(),
-        lastName: userObject.lastName.toLowerCase()
+let firstNames = ['CJ', 'Max', 'Claude', 'Meowmeow'];
+let lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
+
+function createNames(firstNamesArray,lastNamesArray){
+    let accumulator =[]
+    for (let i = 0; i < firstNamesArray.length; i++){
+        accumulator.push({
+            firstName:firstNamesArray[i],
+            lastName: lastNamesArray[i]
+        });
     }
+    return accumulator;
 }
-console.log(getSimpleUser(fred));
 
-
+//
