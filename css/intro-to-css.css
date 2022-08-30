@@ -1,0 +1,18 @@
+
+a{
+    color: azure;
+}
+/*element selector*/
+header{
+    text-align: center;
+    border: 2px solid white;
+    padding: 5px;
+}
+/*id selector*/
+#prices {
+    border-bottom: 1px solid red;
+}
+/*class selector*/
+.bold{
+    font-weight: bold;
+}
