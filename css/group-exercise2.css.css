@@ -1,0 +1,19 @@
+#footer{
+    text-align: center
+}
+
+table {
+    table-layout: fixed;
+    width: 900px;
+    border: 2px solid black;
+
+
+}
+
+
+td {
+    border: 1px solid gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

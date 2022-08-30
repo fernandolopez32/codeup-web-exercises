@@ -1,0 +1,103 @@
+
+/*what is cascade */
+/*The cascade is an algorithm that defines how user agents combine property values originating from different sources.
+ The cascade defines the origin and layer that takes precedence when declarations in more than one origin or cascade
+  layer set a value for a property on an element.*/
+
+
+
+/**/
+/*selector combinations*/
+
+
+/*#myId#myId#myId span { !* 3-0-1 *!}*/
+
+
+/* more specific 0 - 0 - 0 - 0 - 0 less specific */
+/* !important - inline - id - value - type */
+
+body{
+    background-color: goldenrod;
+}
+
+.fancy-header{
+    color: purple;
+}
+
+h1 { text-align: center }
+
+#header{
+    text-decoration: underline;
+}
+
+
+/*
+weighted order of precedence;
+
+!important| inline |  id   |  class | type
+  value   | value  | value | value  | value
+*/
+
+/*!*0,0,0,0,1*!*/
+/*body{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    background-color: goldenrod;*/
+/*}*/
+
+/*!*0,0,0,0,1*!*/
+/*h1 {*/
+/*    text-align: center*/
+/*}*/
+
+/*!*0,0,0,1,0*!*/
+/*.fancy-header{*/
+/*    color: purple;*/
+/*}*/
+
+/*!*id weight 0,0,1,0,0*!*/
+/*#header{*/
+/*    color: darkcyan;*/
+/*    text-decoration: underline;*/
+
+/*}*/
+/*white_check_mark*/
+/*+1*/
+/*raised_hands*/
+
+
+
+
+
+/*New*/
+/*2:28*/
+/*!**/
+/*weighted order of precedence;*/
+
+/*!important| inline |  id   |  class | type*/
+/*  value   | value  | value | value  | value*/
+/**!*/
+
+/*!*type weight: 0,0,0,0,1*!*/
+/*body{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    background-color: goldenrod;*/
+/*}*/
+
+/*!*type weight: 0,0,0,0,1*!*/
+/*h1 {*/
+/*    text-align: center*/
+/*}*/
+
+/*!*class weight: 0,0,0,1,0*!*/
+/*.fancy-header{*/
+/*    color: purple;*/
+/*}*/
+
+/*!*id weight: 0,0,1,0,0*!*/
+/*#header{*/
+/*    color: darkcyan;*/
+/*    text-decoration: underline;*/
+
+/*}*/

@@ -7,3 +7,26 @@ body {
     background: black;
     color: white;
 }
+.italic{
+    font-style: italic;
+
+}
+li.italic{
+    font-size: 1.1rem;
+}
+/*descendent type selector seperated by a space*/
+ul li{
+    color: lightcoral;
+}
+
+ol > li{
+    color: chartreuse;
+}
+/*GRAB BAG*/
+/*adjecent sibling selector */
+/*img + p{*/
+/*}*/
+/*!*general sibling selector *!*/
+/*img~p{*/
+/*    */
+/*}*/
