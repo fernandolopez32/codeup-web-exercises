@@ -1,14 +1,14 @@
-.fancy-header {
+header {
     color: purple;
-}
-h1{
     text-align: center;
 }
 h2{
    text-decoration: underline;
+    color: #007070;
 }
 body{
+    background-image: url("../img/whiteBackGround.jpeg");
     background-color: wheat;
-    /*background-image: url("");*/
-    font-family: "cursive";
+
 }
+
