@@ -68,7 +68,6 @@ fieldset {
 .form-control {
     padding: 4px 4px;
     margin: .5em .5em;
-    width:
     /*DONE There must be 4px on top of the text and below the text of an input with this class */
     /*DONE  It should have a separation of .5em from elements on top of it and below it */
 
