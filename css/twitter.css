@@ -78,10 +78,9 @@ a {
     height: 80px;
 }
 .profile-image{
-    position: relative;
-    top: -40px;
+    position: absolute;
+    top: 235px;
 }
 .profile-form{
-    line-height: ;
-
+    line-height: 80px;
 }
