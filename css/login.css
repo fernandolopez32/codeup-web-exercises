@@ -61,7 +61,7 @@ fieldset {
     /*DONE There must be a separation of 8px between the text and the border of this element */
     /*DONE The text color of this element should be white and bold */
     /*DONE The border of this element should be 1px, and its color should be light grey */
-    border: 1px lightgray;
+    border: 1px solid lightgray;
     background-color: #0fb784;
 }
 
