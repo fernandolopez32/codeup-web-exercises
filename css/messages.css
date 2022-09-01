@@ -11,3 +11,15 @@ div{
     padding: .5rem;
     margin: .5rem;
 }
+.message-info{
+    color: #47429A;
+}
+.message-success{
+    color: #4A8157;
+}
+.message-warning{
+    color: #A59A53;
+}
+.message-error{
+    color: #9C5553;
+}
