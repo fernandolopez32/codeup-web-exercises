@@ -1,0 +1,13 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+div{
+    border: 1px solid black;
+    border-radius: .4rem;
+    padding: .5rem;
+    margin: .5rem;
+}
