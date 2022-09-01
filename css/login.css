@@ -32,7 +32,6 @@ fieldset {
 .width-80 {
     margin: 0 auto;
     width: 80%;
-    position: center;
     /*DONE The element with this class should be 80% of the width and it must be centered */
     /*DONE Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
 }
@@ -75,6 +74,3 @@ fieldset {
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
     width: calc(100% - 2px);
 }
-
-
-

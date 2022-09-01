@@ -16,23 +16,31 @@ body{
 li{
     list-style-type: circle;
 }
+ul li{
+    list-style-type: square;
+}
 html{
-    font-family: Roboto;
-    font-size: medium;
+    font-family: Roboto, sans-serif;
+    font-size: large;
     font-style: italic;
+
 }
 table{
-    border: 2px solid black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 td{
     padding: 10px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 tr th{
     padding: 10px;
-    border: 4px solid black;
+    border: 2px solid black;
 }
 a:hover{
+    font-size: large;
+    font-weight: bold;
     color: purple;
 }
 a:visited{
