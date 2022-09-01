@@ -71,6 +71,7 @@ a {
     padding: 1.5rem;
 }
 .top-nav{
+    z-index: 1000;
     width: 100%;
     position: fixed;
 }
@@ -84,3 +85,20 @@ a {
 .profile-form{
     line-height: 80px;
 }
+.profile-details{
+    margin: 0 .5rem;
+    /*width: calc(margin 25%);*/
+    float: left;
+
+}
+.timeline{
+    margin: 0 .5rem;
+    /*width: calc(margin 50%);*/
+    float: left;
+}
+.who-to-follow {
+    margin: 0 .5rem;
+    /*width: calc(margin 25%);*/
+    float: left;
+}
+
