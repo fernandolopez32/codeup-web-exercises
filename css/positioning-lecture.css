@@ -5,14 +5,20 @@
 /*    padding: 5px;*/
 /*    margin: 1rem;*/
 /*}*/
-
-#ipsum, #quenya, #pirate{
-    border: 1px solid black;
-    width: 25%;
-    float: left;
-    padding: 5px;
-    margin: 1rem;
+#quenya{
+    position: relative;
 }
+img[src*="fish"]{
+    top: 0;
+    right: 0;
+}
+/*#ipsum, #quenya, #pirate{*/
+/*    border: 1px solid black;*/
+/*    width: 25%;*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*    margin: 1rem;*/
+/*}*/
 
 img{
     position: absolute;
@@ -32,4 +38,5 @@ footer p{
     position: relative;
     /* moving something over relative to where things are natural on a page */
     /*left: 5px;*/
+
 }
