@@ -20,10 +20,12 @@ img[src*="fish"]{
 /*    margin: 1rem;*/
 /*}*/
 
-img{
-    position: absolute;
+img[src="img/logo.png"]{
+    position: fixed;
+    /*position: relative;*/
 /*    absolute position removed the image fro the natural flow of the page*/
-    top: 0;
+    top: 25%;
+    left: 0;
     /*right: 0;*/
     z-index: -1;
 }
@@ -38,5 +40,5 @@ footer p{
     position: relative;
     /* moving something over relative to where things are natural on a page */
     /*left: 5px;*/
-
 }
+
