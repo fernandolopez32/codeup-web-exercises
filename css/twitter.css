@@ -71,6 +71,7 @@ a {
     padding: 1.5rem;
 }
 .top-nav{
+    background: var(--light-bg);
     z-index: 1000;
     width: 100%;
     position: fixed;
@@ -84,14 +85,15 @@ a {
 }
 .profile-form{
     line-height: 80px;
+    float: right;
+}
+.profile-entry{
+    margin: .5em;
 }
 .profile-details{
     margin: 0 .5rem;
     width: calc(25% - 0.5rem);
     float: left;
-}
-.profile-entry{
-    margin: .5em;
 }
 .profile-items{
     padding: 0;
@@ -113,14 +115,14 @@ a {
 }
 .media{
     width: 100%;
-    background-color: white;
-    border-bottom: 1px solid black;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
     padding: .5em;
     overflow: auto;
 }
 .media-image{
     max-width: 50px;
-    margin: 1.3em;
+    margin: 1.33em;
     overflow: auto;
 }
 .media-body{
