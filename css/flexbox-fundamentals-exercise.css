@@ -40,7 +40,7 @@ h2, h3 {
 section {
     /* enter needed declarations here */
     display: flex;
-    /*justify-content: space-around;*/
+    flex-wrap: nowrap;
 
 
 }
@@ -67,12 +67,12 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
-    flex-basis: 50%;
+    flex-basis: 55%;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
-    flex-basis: 40%;
+    flex-basis: 35%;
 
 }
 
@@ -84,6 +84,7 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+
 }
 
 section:nth-of-type(3) h3 {
