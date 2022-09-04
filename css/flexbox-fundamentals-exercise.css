@@ -46,6 +46,7 @@ section {
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
+    justify-content: space-between;
     /* enter needed declarations here */
 
 }
