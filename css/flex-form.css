@@ -28,8 +28,6 @@ body {
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-
-
 }
 
 .flex-form {
@@ -39,7 +37,7 @@ body {
     border-radius: 5px;
     /* TODO: Add an automatic margin and a flex container to this selector */
     display: flex;
-    width: 55%;
+    flex-basis: 55%;
     justify-content: center;
 }
 
