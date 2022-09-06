@@ -14,8 +14,10 @@
     justify-content: flex-start;
     /*justify content defines the distribution of space along the MAIN AXIS of the container*/
     align-items: baseline;
-    /*align items defines the distribution of space along the CROSS AXIS of the container*/
-    /*how extra space is distributed between and around flex lines. it applies only to containers with multiple flex lines. */
+    /*align items defines the distribution of space along the CROSS AXIS of
+    the container*/
+    /*how extra space is distributed between and around flex lines. it
+    applies only to containers with multiple flex lines. */
     /*Value base line is the alignment to the first line of text*/
     /*distributes the flex lines evenly */
 }
