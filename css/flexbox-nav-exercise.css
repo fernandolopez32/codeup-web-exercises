@@ -4,9 +4,9 @@ ul{
     margin: auto;
 }
 .navBar{
-    margin: auto;
     box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
 }
 .firstList{
     display: flex;

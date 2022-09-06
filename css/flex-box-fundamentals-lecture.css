@@ -1,0 +1,18 @@
+.flexbox{
+    border: 1px solid black;
+    padding: 5px;
+    display: flex;
+    /*flex direction changes the order of the main axis*/
+    /*flex-direction: column-reverse;*/
+    /*  vh is view port height*/
+    height: 50vh;
+    /*flex-wrap: wrap-reverse;*/
+    flex-flow: column wrap;
+/*  flex flow combines direction and wrap  */
+}
+
+.flex-item{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
