@@ -1,0 +1,14 @@
+
+ul{
+    list-style: none;
+    margin: auto;
+}
+.navBar{
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+}
+.firstList{
+    display: flex;
+    flex-wrap: wrap;
+}
