@@ -1,14 +1,33 @@
 
 ul{
     list-style: none;
-    margin: auto;
+    margin: 0;
+    padding: 0;
 }
-.navBar{
-    box-sizing: border-box;
+li{
+    padding: 5px;
+}
+.container{
+    background-color: #C1C1C1;
+    border: 1px solid black;
+    padding: 10px;
+
+
     display: flex;
-    justify-content: space-between;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
 .firstList{
     display: flex;
-    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.secondList{
+    display: flex;
+}
+.logo{
+    /*display: flex;*/
+    position: relative;
+    flex-grow: 1;
+    left: 20vw;
 }

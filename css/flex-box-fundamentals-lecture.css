@@ -5,10 +5,19 @@
     /*flex direction changes the order of the main axis*/
     /*flex-direction: column-reverse;*/
     /*  vh is view port height*/
-    height: 50vh;
+    /*height: 900px;*/
     /*flex-wrap: wrap-reverse;*/
-    flex-flow: column wrap;
+    flex-flow: row wrap;
 /*  flex flow combines direction and wrap  */
+/*    */
+/*    properties that allow you to control empty space*/
+    justify-content: flex-start;
+    /*justify content defines the distribution of space along the MAIN AXIS of the container*/
+    align-items: baseline;
+    /*align items defines the distribution of space along the CROSS AXIS of the container*/
+    /*how extra space is distributed between and around flex lines. it applies only to containers with multiple flex lines. */
+    /*Value base line is the alignment to the first line of text*/
+    /*distributes the flex lines evenly */
 }
 
 .flex-item{
@@ -16,3 +25,28 @@
     margin: 5px;
     padding: 5px;
 }
+
+.one{
+    align-self: flex-end;
+    order: 1
+}
+.two{
+    align-self: center;
+}
+.three{
+    /*flex-grow: 2;*/
+}
+.four{
+    align-self: center;
+    /*flex-grow: 1;*/
+}
+.five{
+    /*flex-grow: .5;*/
+    align-self: center;
+}
+.six{
+    align-self: flex-end;
+    order: -1
+}
+
+/*by default all items are presented in ORDER 0 */
