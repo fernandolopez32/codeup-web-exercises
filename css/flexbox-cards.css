@@ -22,10 +22,6 @@ a {
     /* TODO: Make this a flex container and align it's items to the center*/
     display: flex;
     align-items: center;
-
-    flex-wrap: wrap;
-    flex-direction: column;
-
 }
 
 .card {
@@ -38,7 +34,6 @@ a {
     flex-basis: 100%;
     flex-direction: column;
     text-align: center;
-
 }
 
 .card-title {
