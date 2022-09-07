@@ -4,5 +4,8 @@ function isNumber(value) {
 }
 
 
-
+// Is string
+function isString(input){
+    return typeof input === 'string';
+}
 

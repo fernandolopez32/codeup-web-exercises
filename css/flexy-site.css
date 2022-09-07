@@ -1,0 +1,19 @@
+body{
+    background-color: #deded8;
+    font-family: "Heveletica Neue", Hevelica,sans-serif;
+}
+header, article, footer{
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+
+}
+article{
+    background-color: white;
+
+}

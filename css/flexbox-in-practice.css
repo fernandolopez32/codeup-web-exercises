@@ -1,41 +1,67 @@
-nav, div{
+nav, div {
     display: flex;
-
 }
-nav{
+
+nav {
+    display: flex;
     justify-content: flex-end;
 }
-nav,a{
+
+nav, a {
     margin: 10px;
 }
-div{
-    border-radius: 7px;
-    border: 2px solid gold;
-    padding: 20px;
-    height: 150px;
-    justify-content: center;
-    align-items: center;
 
-}
-/*div, a{*/
-/*    display: block;*/
-/*    text-align: center;*/
-/*    width: 150px;*/
-/*    !*margin: auto;*!*/
-/*}*/
-nav a:nth-of-type(3){
-    margin-left: auto;
-}
-nav a:nth-of-type(4),nav a:nth-of-type(2) {
-    margin-left: auto;
-}
-a{
-    color: black;
-    text-decoration: none;
+a {
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
 }
-a:hover{
-    color: red;
+
+div {
+    /*height: 150px;*/
+    border: 2px solid gold;
+    padding: 15px;
+    border-radius: 7px;
+
+    /* Another way to center is */
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+div a {
+    display: block;
+    text-align: center;
+    width: 150px;
+    margin: auto;
+    /*margin: 53px auto; how to center in the old times using math*/
+    /*    center with flex when you change the height it will still be center*/
+
+}
+
+/* moves the navigation*/
+nav a:nth-of-type(4) {
+    margin-left: auto;
+}
+
+nav a:nth-of-type(2) {
+    margin-left: auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    flex-direction: column;
+    display: flex;
+    border: 2px solid darkgray;
+    padding: 5px;
+    width: 330px;
+    margin: 10px;
+
+}
+
+section p {
+    flex-grow: 1;
 }
