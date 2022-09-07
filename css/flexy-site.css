@@ -2,6 +2,7 @@ body{
     background-color: #deded8;
     font-family: "Heveletica Neue", Hevelica,sans-serif;
 }
+
 header, article, footer{
     padding: 0.5em;
     box-sizing: border-box;
@@ -13,9 +14,11 @@ header{
     text-align: center;
 
 }
+
 article{
     background-color: white;
 }
+
 nav{
     display: flex;
     background-color: black;
@@ -30,4 +33,10 @@ nav a{
     margin: 0 5px;
     padding: 5px 0;
     text-decoration: none;
+}
+
+nav a:hover{
+    outline: 1px solid red;
+    color: red;
+    text-decoration: underline;
 }
