@@ -15,5 +15,19 @@ header{
 }
 article{
     background-color: white;
+}
+nav{
+    display: flex;
+    background-color: black;
+    padding: 10px 0;
+}
 
+nav a{
+    flex: auto;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px 0;
+    text-decoration: none;
 }
