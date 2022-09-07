@@ -3,7 +3,7 @@ body{
     font-family: "Heveletica Neue", Hevelica,sans-serif;
 }
 
-header, article, footer{
+header, article, footer, aside{
     padding: 0.5em;
     box-sizing: border-box;
 }
@@ -15,12 +15,21 @@ header{
 
 }
 
+main{
+    display: flex;
+}
+
 article{
+    flex: 75%;
+}
+aside{
+    flex: 25%;
     background-color: white;
 }
 
 nav{
     display: flex;
+    flex-wrap: wrap;
     background-color: black;
     padding: 10px 0;
 }
@@ -39,4 +48,8 @@ nav a:hover{
     outline: 1px solid red;
     color: red;
     text-decoration: underline;
+}
+
+nav a:nth-of-type(1), nav a:nth-of-type(2), nav a:last-of-type{
+    flex-shrink: 2;
 }
