@@ -23,14 +23,16 @@
         } else if (detonationTimer > 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
         }
-
-        detonationTimer--;
+         detonationTimer--
     }
+   let bombTime = setInterval(updateTimer,1000);
+
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+        clearInterval(bombTime)
+        alert('you have diffused the bomb')
     }
 
     // Don't modify anything below this line!
