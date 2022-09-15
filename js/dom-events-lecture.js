@@ -32,6 +32,6 @@ function eventHandler(){
 //
 square.addEventListener('click',eventHandler);
 //
-// document.querySelector("div").addEventListener('click',function(){
-//     alert("You clicked the square" );
-// });
+document.querySelector("div").addEventListener('click',function(){
+    alert("You clicked the square" );
+});
