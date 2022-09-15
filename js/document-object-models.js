@@ -53,7 +53,6 @@ transformButton.onclick = function (){
     }
     theHulk.innerText = `The Hulk is in ${hulkState} state.`
 
-
 }
 
 
