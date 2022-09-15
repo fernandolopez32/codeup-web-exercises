@@ -26,7 +26,13 @@ submitButton.onclick = function (){
     let colorInput = document.getElementById("colorPreference");
     let paragraphs = document.getElementsByTagName("p");
     for(let i = 0; i < paragraphs.length; i++){
-        paragraphs[i].style.color =
-            colorInput.value;
+        paragraphs[i].style.color = colorInput.value;
     }
 }
+
+//intent of changing the submit button on mouse over
+// submitButton.onmouseover = function (){
+//     let form = document.getElementsByName("changeColor");
+//     form =
+//
+// }
