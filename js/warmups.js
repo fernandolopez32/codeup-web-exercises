@@ -271,13 +271,41 @@ function convertAddressToObject(addressString){
  * Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property.
  *
  * Examples
- *
- * >> totalPets([
- *       {name: 'Fernando Mendoza', pets: 1},
- *       {name: 'Douglas Hirsh', pets: 8},
- *       {name: 'Kenneth Howell', pets: 2}
- *    ]) ➞ 11
- */
+ **/
+ let peopleAndPets  =[
+       {name: 'Fernando Mendoza', pets: 1},
+        {name: 'Douglas Hirsh', pets: 8},
+        {name: 'Kenneth Howell', pets: 2}
+     ]
+
+// for loop
+function totalPets(arrayOfObjects){
+     // set accumulator
+     let total = 0;
+    // looping through the object that we will receive in the argument
+    for (let i = 0; i < arrayOfObjects.length; i++){
+        // in each iteration we add the number of pets that each person has CALLING IT BY DOT NOTATION (.pets)
+        total += arrayOfObjects[i].pets;
+    }
+    return total;
+}
+
+//for each loop
+// function totalPets(arrayOfObjects){
+//      // set a accumulator
+//      let total = 0
+//     arrayOfObjects.forEach(function (object){
+//         total += object.pets;
+//     })
+//     return total;
+// }
+
+// .reduce method
+function totalPetsReduce(arrayyOfObjects){
+     return arrayyOfObjects.reduce(function (acc, currentValue){
+         return acc + currentValue.pets;
+     },0)
+}
 
 /**
  * Find the Smallest and Biggest Numbers
