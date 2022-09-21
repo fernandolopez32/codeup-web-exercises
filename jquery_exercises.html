@@ -5,10 +5,60 @@
     <title>jquery_exercises</title>
 </head>
 <body>
+<div>
+    <h1>This is my heading</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut dignissimos distinctio dolorum, ea eaque error esse minima nam nulla odit possimus quas, ratione reiciendis totam voluptatem voluptates. Magnam, minus.</p>
+    <ul>
+        <li class="codeup">React</li>
+        <li id="codeup" >Vue</li>
+        <li class="codeup">jQuery</li>
+    </ul>
+</div>
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function (){
-        alert("whassssaaaaaa!");
+    $(function (){
+        //element selector exercise
+        // $('li').css({
+        //     'font-size': '20px',
+        //     'background': 'hotpink'
+        // })
+        // let $paragraphs = $('p')
+        //
+        // $paragraphs.css('background', 'blue');
+        //
+        // const $heading = $('h1');
+        //
+        // $heading.css('background', 'green');
+        // alert($heading.text());
+        //
+        // //bonus
+        // let allElements = $("p, li, h1");
+        // allElements.css('display', 'none');
+
+        let $heading = $('h1');
+        $heading.click(function (){
+            $heading.css('background-color', 'blue');
+        });
+        $heading.dblclick(function (){
+            $heading.css('background-color', 'white');
+        });
+
+        let $paragraphs = $('p');
+        $paragraphs.dblclick(function (){
+            $paragraphs.css('font-size', '20px')
+        });
+
+        let $listItems = $('li');
+        $listItems.hover(function (){
+            $listItems.css('color', 'red');
+        })
+
+
+
     })
 </script>
 </body>
