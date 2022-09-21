@@ -44,17 +44,17 @@
             $heading.css('background-color', 'blue');
         });
         $heading.dblclick(function (){
-            $heading.css('background-color', 'white');
+            $(this).css('background-color', 'white');
         });
 
         let $paragraphs = $('p');
         $paragraphs.dblclick(function (){
-            $paragraphs.css('font-size', '20px')
+            $(this).css('font-size', '20px')
         });
 
         let $listItems = $('li');
         $listItems.hover(function (){
-            $listItems.css('color', 'red');
+            $(this).css('color', 'red');
         })
 
 
