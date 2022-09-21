@@ -27,16 +27,30 @@ $(function (){
     })
 
 
+    // $(".box").hover(function (){
+    //     $(this).addClass('hotpink');
+    // },
+    // function (){
+    //     $(this).removeClass('hotpink');
+    // });
+
+    //this makes life easier
     $(".box").hover(function (){
-        $(this).addClass('hotpink');
-    },
-    function (){
-        $(this).css('background-color','unset');
+        $(this).toggleClass('hotpink')
     });
 
+    //logging the key that is being pressed
     $(document).keydown(function(e){
         // alert("you just pressed a key down");
         console.log(e.originalEvent.key);
     })
+
+    console.log($('div').text());
+    console.log($('div').html());
+
+    $('div').text('this is now what is says');
+    $("p").before('<ul><li>hello</li></ul>');
+
+
 
 })
