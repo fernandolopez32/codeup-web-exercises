@@ -17,14 +17,22 @@ $(function (){
 
 
     //this will work because we register the event with the document because the document does exist at this point
-    $(document).on('click', '.will-this-work',function (){
-        alert(":) this will work");
-    })
+    // $(document).on('click', '.will-this-work',function (){
+    //     alert(":) this will work");
+    // })
 
     // delegated event more precise look
     $('#dynamic-content').on('click', '.will-this-work',function () {
         alert(":) this will work");
     })
+
+
+    $(".box").hover(function (){
+        $(this).addClass('hotpink');
+    },
+    function (){
+        $(this).css('background-color','unset');
+    });
 
 
 })
