@@ -34,5 +34,9 @@ $(function (){
         $(this).css('background-color','unset');
     });
 
+    $(document).keydown(function(e){
+        // alert("you just pressed a key down");
+        console.log(e.originalEvent.key);
+    })
 
 })

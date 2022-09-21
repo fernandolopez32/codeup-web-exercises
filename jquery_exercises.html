@@ -41,10 +41,7 @@
 
         let $heading = $('h1');
         $heading.click(function (){
-            $heading.css('background-color', 'blue');
-        });
-        $heading.dblclick(function (){
-            $(this).css('background-color', 'white');
+            $(this).css('background-color', 'blue');
         });
 
         let $paragraphs = $('p');
@@ -55,6 +52,8 @@
         let $listItems = $('li');
         $listItems.hover(function (){
             $(this).css('color', 'red');
+        }, function (){
+            $(this).css('color', 'unset');
         })
 
 
