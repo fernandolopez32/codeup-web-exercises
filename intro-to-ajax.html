@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>intro to AJAX</title>
-    <script src="js/jquery-3.6.1.min.js"></script>
+
+
     <style>
         #murals-info {
             margin: 10px auto;
@@ -30,6 +31,7 @@
         }
     </style>
 
+
 </head>
 <body>
     <section id="murals-info">
@@ -38,26 +40,29 @@
     <section id="murals-cards">
 
     </section>
-    <script>
-        $('#murals-info').on('click',function (){
-            $.ajax("data/murals.json").done(function (data){
-                data.forEach(function (mural){
 
-                    console.log(mural.artist_credit );
-                    //
-                    console.log(mural.artwork_title ? mural.artwork_title : "Untitled");
-                    // same thing but in ternary form
-                    // console.log(mural.artwork_title ?? "Untitled");
-                    let title = mural.artwork_title ?? "Untitled";
-                    $('#murals-cards').append(
-                        `<article class = 'card'>
+    <script>
+
+            $('#murals-info').on('click',function (){
+                $.ajax("data/murals.json").done(function (data){
+                    data.forEach(function (mural){
+
+                        console.log(mural.artist_credit );
+                        //
+                        console.log(mural.artwork_title ? mural.artwork_title : "Untitled");
+                        // same thing but in ternary form
+                        // console.log(mural.artwork_title ?? "Untitled");
+                        let title = mural.artwork_title ?? "Untitled";
+                        $('#murals-cards').append(
+                            `<article class = 'card'>
                           <p>${title}</p>
                           <p>${mural.artist_credit}</p>
                           </article>`
-                    );
+                        );
+                    });
                 });
-            });
-        })
+        });
+
     </script>
 </body>
 </html>
