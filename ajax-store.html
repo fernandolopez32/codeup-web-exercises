@@ -28,8 +28,6 @@
 $(function() {
 
         $('button').on('click',function (){
-            $(document).refresh();
-        });
             $.ajax("data/inventory.json").done(function (data){
                 data.forEach(function (tool){
                     console.log(tool);
@@ -42,12 +40,14 @@ $(function() {
                  </tr>`
                     );
                 });
+                $('table').css('border', '2px solid black');
                 $('td').css({
-                 'padding': '20px',
-                 'color': 'blue',
-                })
-
+                    'padding': '20px',
+                    'color': 'blue',
+                });
             });
+        });
+
 
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
