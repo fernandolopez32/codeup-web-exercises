@@ -25,7 +25,14 @@ $(function (){
         $(this).next().slideToggle();
     });
 
+    $("header p").hover(function (){
+        $(this).parent().toggleClass('darkMode')
+    });
 
+
+    $("#latinBgone").on('click', function(){
+        console.log($(this).parent().parent().parent().prev().find("li").first().remove());
+    });
 
 
 })
