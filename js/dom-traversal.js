@@ -30,9 +30,9 @@ $(function (){
     });
 
 
-    $("#latinBgone").on('click', function(){
-        console.log($(this).parent().parent().parent().prev().find("li").first().remove());
-    });
+    // $("#latinBgone").on('click', function(){
+    //     console.log($(this).parent().parent().parent().prev().find("li").first().remove());
+    // });
 
 
 })
