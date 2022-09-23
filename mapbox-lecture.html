@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox lecture</title>
+    <script src="js/keys.js"></script>
 
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
 
@@ -12,6 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!--    -->
+    <script src="js/mapbox-geocoder-utils.js"></script>
+<!--    custom style sheet -->
     <style>
         #map{
             width: 50%;
@@ -28,8 +32,14 @@
     <input type="text" name="zoom" id="zoom" class="my-2">
     <button id="zoomSubmit">Submit</button>
 </form>
+
+<form>
+    <label for="setMarker"></label>
+    <input type="text"name="setMarker"id="setMarker" class="my-2">
+    <button id="SetMarkerButton">set marker</button>
+</form>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZmVybmFuZG9sb3BleiIsImEiOiJjbDhlcHBtYncwdXh0M3ZrOTkzcXVkYTJ1In0.U9pGhWUgH8WGFMATBAhcXg';
+        mapboxgl.accessToken = MAPBOX_API_TOKEN;
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/navigation-night-v1', // style URL
@@ -52,6 +62,27 @@
         const codeupPopup = new mapboxgl.Popup()
             .setHTML('<p>codeup</p>');
         codupMarker.setPopup(codeupPopup);
+
+        let coords;
+        function getCoords(address,token){
+            geocode(address,token).then(function (coordinates){
+                console.log(coordinates);
+                coords = coordinates;
+            });
+        }
+        getCoords("8307 bending willow, San Antonio", MAPBOX_API_TOKEN);
+        console.log(coords);
+
+        document.getElementById("#setMarkerButton").addEventListener('click',function (e){
+            e.preventDefault();
+            const address = document.getElementById('#setMarker')
+                .value;
+            geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
+                console.log(coordinates)
+                const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
+            })
+        })
+
     </script>
 
 </body>
