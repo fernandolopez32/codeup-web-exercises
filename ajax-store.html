@@ -27,26 +27,45 @@
 <script>
 $(function() {
 
-        $('button').on('click',function (){
-            $.ajax("data/inventory.json").done(function (data){
-                data.forEach(function (tool){
-                    console.log(tool);
-                    $('#insertProducts').append(
-                        `<tr>
-                     <td>${tool.title}</td>
-                     <td>${tool.quantity}</td>
-                     <td>${tool.price}</td>
-                     <td>${tool.categories}</td>
-                 </tr>`
-                    );
-                });
-                $('table').css('border', '2px solid black');
-                $('td').css({
-                    'padding': '20px',
-                    'color': 'blue',
-                });
-            });
+        // $('button').on('click',function (){
+        //     $.ajax("data/inventory.json").done(function (data){
+        //         data.forEach(function (tool){
+        //             console.log(tool);
+        //             $('#insertProducts').append(
+        //                 `<tr>
+        //              <td>${tool.title}</td>
+        //              <td>${tool.quantity}</td>
+        //              <td>${tool.price}</td>
+        //              <td>${tool.categories}</td>
+        //          </tr>`
+        //             );
+        //         });
+        //         $('table').css('border', '2px solid black');
+        //         $('td').css({
+        //             'padding': '20px',
+        //             'color': 'blue',
+        //         });
+        //     });
+        // });
+
+//    javier solution for the button that refreshes the table
+function loadInventory() {
+    $.ajax("data/inventory.json").done(data => {
+        console.log(data);
+        data.forEach(function (tool) {
+            $("#insertProducts").append(
+                `<tr>
+                        <td>${tool.title}</td>
+                        <td>${tool.quantity}</td>
+                        <td>$${tool.price}</td>
+                        <td>${tool.categories.join(", ")}</td>
+                    </tr>`
+            );
         });
+    });
+}
+        loadInventory();
+    $('button').on('click',() => loadInventory());
 
 
     // TODO: Create an AJAX GET request for the file under data/inventory.json
