@@ -12,11 +12,15 @@
     <script src="js/keys.js"></script>
 <!--    jquery-->
     <script src="js/jquery-3.6.1.min.js"></script>
+    <!-- bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container mx-auto mt-4">
+        <!--map inside the body-->
+        <div id='map' style='width: 600px; height: 400px;' class="mx-auto mt-5"></div>
+    </div>
 
-<!--map inside the body-->
-    <div id='map' style='width: 400px; height: 300px;'></div>
 
 <!--  script for the map  -->
 <script>
@@ -25,13 +29,13 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 2, // starting zoom
+        zoom: 3, // starting zoom
         projection: 'globe' // display the map as a 3D globe
     });
     map.on('style.load', () => {
         map.setFog({}); // Set the default atmosphere style
     });
-    map.setCenter([-112.116202, 33.560835]);
+    map.setCenter([-101.83123, 35.206865]);
 
     // const bobbyqMarker = new mapboxgl.Marker()
     //     .setLngLat([-112.116202, 33.560835]).addTo(map);
@@ -74,6 +78,8 @@
 
 
 </script>
+<!-- Bootstrap JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
 </body>
 </html>
