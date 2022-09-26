@@ -382,8 +382,30 @@ function lastOfArray(array){
 }
 // -- Write a function that takes in an array and returns the array modified in some way -- certain elements removed, certain elements modified in a regular way (example, every numerical value doubled, every string uppercased)
 //
+function removeLastElement(array){
+    return array.pop();
+}
+let arrayOfObjects = [
+    {
+        name: "fern",
+        age: 23
+    },{
+        name: "lalo",
+        age: 25
+    },{
+        name: "juan",
+        age: 24
+    }
+]
 // -- Write a function that accepts an array of objects where each object has at least one property with a numeric value, be able to return the total or average of the numeric values
 //
+function addPropertyValues(array){
+    let ageAccumulator = 0
+    for(let i = 0; i<array.length; i++){
+        ageAccumulator += array[i].age
+    }
+    console.log(ageAccumulator)
+}
 // -- Write a function that accepts a string, breaks down the string into components, and returns an object where each component of the string has become the value of a property
 //
 // -- Write a function that analyzes a string, returning the results of the analysis, example, return the length of the string
