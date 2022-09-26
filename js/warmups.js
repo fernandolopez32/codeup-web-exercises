@@ -256,15 +256,15 @@ function creatObject(attendanceObject){
 
 let address = "8646 Sunny Oaks"
 
-// function convertAddressToObject(addressString){
-//     // this return returns an object thanks to the {} brackets
-//     return{
-//         //substring method to find the first section of the object using index of to find the first space
-//         streetNumber: address.substring(0,address.indexOf(" ")),
-//         // using method substring from the index of the space +1 and everything after that is now the value of streetName
-//         streetName: addressString.substring(addressString.indexOf(" ")+1)
-//     }
-// }
+function convertAddressToObject(addressString){
+    // this return returns an object thanks to the {} brackets
+    return{
+        //substring method to find the first section of the object using index of to find the first space
+        streetNumber: address.substring(0,address.indexOf(" ")),
+        // using method substring from the index of the space +1 and everything after that is now the value of streetName
+        streetName: addressString.substring(addressString.indexOf(" ")+1)
+    }
+}
 
 /**
  * Count total pets
@@ -408,6 +408,12 @@ function addPropertyValues(array){
 }
 // -- Write a function that accepts a string, breaks down the string into components, and returns an object where each component of the string has become the value of a property
 //
+function makeStringAnObject(string){
+    return {
+        city: string.slice(0,string.indexOf(",")),
+        state: string.slice(string.indexOf(",")+1)
+    }
+}
 // -- Write a function that analyzes a string, returning the results of the analysis, example, return the length of the string
 //
 // -- Write a function that analyzes a string, returning an object that contains several properties with information about the string, example, length, firstLetter, and lastLetter properties
