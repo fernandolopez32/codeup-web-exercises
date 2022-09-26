@@ -378,7 +378,7 @@ function addNumbers(arg,arg2){
 }
 
 function lastOfArray(array){
-    return array.findLast()
+    return array.slice(3);
 }
 // -- Write a function that takes in an array and returns the array modified in some way -- certain elements removed, certain elements modified in a regular way (example, every numerical value doubled, every string uppercased)
 //
