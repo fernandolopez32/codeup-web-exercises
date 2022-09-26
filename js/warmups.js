@@ -416,6 +416,9 @@ function makeStringAnObject(string){
 }
 // -- Write a function that analyzes a string, returning the results of the analysis, example, return the length of the string
 //
+function lengthOfString(string){
+    return string.length;
+}
 // -- Write a function that analyzes a string, returning an object that contains several properties with information about the string, example, length, firstLetter, and lastLetter properties
 //
 //
