@@ -421,6 +421,12 @@ function lengthOfString(string){
 }
 // -- Write a function that analyzes a string, returning an object that contains several properties with information about the string, example, length, firstLetter, and lastLetter properties
 //
+function objectFromString(string){
+    return{
+        lengthOfString: string.length,
+        firstLetter: string.trim().charAt(0)
+    }
+}
 //
 // -- Write a function that takes in a string and modifies it in some way.  Example write a function that takes in a string and replaces every instance of the letter e with the number 3, and every instance of the letter i with the number 1, and every instance of the letter o with the number 0, and a with 4.  Write a function that capitalizes every other letter in the string starting with the first letter, counting blank spaces as characters.  Try the same not counting blank spaces as characters.  Write a function that capitalizes the last letters of every word in a string.
 //
