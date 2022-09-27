@@ -380,11 +380,36 @@ function addNumbers(arg,arg2){
 function lastOfArray(array){
     return array.slice(3);
 }
+
+function doubleNumber(number){
+    return number *2;
+}
 // -- Write a function that takes in an array and returns the array modified in some way -- certain elements removed, certain elements modified in a regular way (example, every numerical value doubled, every string uppercased)
 //
 function removeLastElement(array){
     return array.pop();
 }
+let arrayOfNumber = [1,2,3,4,5,6,7,8,9,10];
+
+function removeOdds (array){
+    const newArray = [];
+    for(let i = 0; i < array.length; i++){
+        if(array[i] % 2 === 0  ){
+            newArray.push(array[i]);
+        }
+    }
+    return newArray
+}
+
+function doubleNumbers(array){
+    const newArray = [];
+    for(let i = 0; i < array.length; i++){
+            newArray.push(array[i] * 2);
+    }
+    return newArray;
+}
+
+
 let arrayOfObjects = [
     {
         name: "fern",
@@ -430,51 +455,96 @@ function objectFromString(string){
 //
 // -- Write a function that takes in a string and modifies it in some way.  Example write a function that takes in a string and replaces every instance of the letter e with the number 3, and every instance of the letter i with the number 1, and every instance of the letter o with the number 0, and a with 4.  Write a function that capitalizes every other letter in the string starting with the first letter, counting blank spaces as characters.  Try the same not counting blank spaces as characters.  Write a function that capitalizes the last letters of every word in a string.
 //
+
+
 // /**
 //  * Get Sum of People's Budget
 //  * Create the function named getBudgets that takes an array with objects and returns the sum of people's budgets.
 //  *
 //  * Examples
 //  *
-//  * >> getBudgets([
-//  *        { name: "John", age: 21, budget: 23000 },
-//  *        { name: "Steve",  age: 32, budget: 40000 },
-//  *        { name: "Martin",  age: 16, budget: 2700 }
-//  *    ]) ➞ 65700
-//  * >> getBudgets([
-//  *        { name: "John",  age: 21, budget: 29000 },
-//  *        { name: "Steve",  age: 32, budget: 32000 },
-//  *        { name: "Martin",  age: 16, budget: 1600 }
-//  *    ]) ➞ 62600
-//  */
+let   getBudgets = ([
+         { name: "John", age: 21, budget: 23000 },
+         { name: "Steve",  age: 32, budget: 40000 },
+         { name: "Martin",  age: 16, budget: 2700 },
+         { name: "John",  age: 21, budget: 29000 },
+         { name: "Steve",  age: 32, budget: 32000 },
+        { name: "Martin",  age: 16, budget: 1600 }
+    ])
+
 //
 //
+
+function arrayOfObjectsElements(array){
+    let accumulator = 0
+    for(let i = 0; i < array.length; i++){
+        accumulator += array[i].budget
+    }
+    return accumulator
+}
+
 //  /**
 //  * Get Student Top Notes
 //  * Create a function named getStudentTopNotes that takes an array of students and returns an array of their top notes.
 //  * If the student does not have notes then let's assume their top note is equal to 0.
 //  *
 //  * Examples
-//  *
-//  * >> getStudentTopNotes([
-//  *      {
-//  *         id: 1,
-//  *         name: "Jacek",
-//  *         notes: [5, 3, 4, 2, 5, 5]
-//  *       },
-//  *      {
-//  *         id: 2,
-//  *         name: "Ewa",
-//  *         notes: [2, 3, 3, 3, 2, 5]
-//  *       },
-//  *      {
-//  *         id: 3,
-//  *         name: "Zygmunt",
-//  *         notes: [2, 2, 4, 4, 3, 3]
-//  *       }
-//  *    ]) ➞ [5, 5, 4]
-//  */
+ let students = [
+      {
+          id: 1,
+          name: "Jacek",
+          notes: [5, 3, 4, 2, 5, 5]
+
+       },
+      {
+         id: 2,
+         name: "Ewa",
+         notes: [2, 3, 3, 3, 2, 5]
+
+       },
+      {
+         id: 3,
+         name: "Zygmunt",
+         notes: [2, 2, 4, 4, 3, 3]
+       }
+    ]
+// ➞ [5, 5, 4]
+// my attempt
+// function getStudentTopNotes(parameter){
+//     let studentNotes = []
+//     for(let i = 0; i < parameter.length; i++){
+//         studentNotes += parameter[i].notes;
+//     }
+//     return studentNotes
+// }
 //
+
+function getStudentTopNotes(arrayOfStudentObject){
+    const topNotes = []
+    arrayOfStudentObject.forEach(studentObject =>{
+        topNotes.push(Math.max(...studentObject.notes));
+
+    });
+    return topNotes
+}
+
+//  function getStudentTopNotes(arrayOfStudentObject){
+//     let topnotes =  0;
+//     for(let i = 0; i < arrayOfStudentObject.length; i ++){
+//         let topNote = arrayOfStudentObject[i].notes[0];
+//         for(let j = 0; j < arrayOfStudentObject[i].notes.length; j++){
+//             if(arrayOfStudentObject[i].notes[j] > topNote){
+//                 topNote = arrayOfStudentObject[i].notes[j];
+//             }
+//         }
+//         topnotes.push(topnote);
+//     }
+//     return topnotes;
+// }
+
+
+
+
 //
 //
 //  /**
@@ -482,6 +552,15 @@ function objectFromString(string){
 //  * Remove the Letters ABC
 //  * Create a function named removeABC that will remove the letters "a", "b" and "c" from the given string and return the modified version. If the given string does not contain "a", "b", or "c", return null.
 //  *
+function removeABC(string){
+    if (!string.includes('a','b','c')){
+        return null
+    }
+    else
+    return string.replaceAll('a','').replaceAll('b','').replaceAll('c','');
+}
+
+
 //  * Examples
 //  * >> removeABC("This might be a bit hard") ➞ "This might e  it hrd"
 //  * >> removeABC("hello world!") ➞ null

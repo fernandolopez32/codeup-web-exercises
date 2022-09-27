@@ -16,9 +16,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container mx-auto mt-4">
+    <div class="container d-flex mx-auto mt-4">
         <!--map inside the body-->
         <div id='map' style='width: 600px; height: 400px;' class="mx-auto mt-5"></div>
+<!--        <label for="zoom5"></label>-->
+<!--        <button id="zoom5" name="zoom5" class="justify-content-center">Zoom +5</button>-->
     </div>
 
 
@@ -58,7 +60,7 @@
         }
     ];
 
-    restaurants.forEach(data => {
+    restaurants.forEach(function (data){
         //-112.116202, 33.560835
         //{lng: -112.116202, lat: 33.560835}
         let coordsSplit = data.coords.split(', ');
@@ -70,7 +72,6 @@
 
         const restaurantPopups = new mapboxgl.Popup().setHTML(
             `<h3>${data.name}</h3><p>${data.description}</p>`);
-
 
         restaurant.setPopup(restaurantPopups);
     });

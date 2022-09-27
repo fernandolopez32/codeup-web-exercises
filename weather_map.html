@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+<!--    jQuery-->
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <!-- map script and style sheet-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' /><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!--keys-->
+    <script src="js/keys.js"></script>
+<!--  map utils  -->
+    <script src="js/mapbox-geocoder-utils.js"></script>
+<!-- bootstrap CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--    custom style-->
+    <style>
+        .card{
+            height: 300px;
+            width: 180px;
+
+        }
+    </style>
+
+</head>
+<body>
+<!-- Navbar content -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div id="switch" class="form-check form-switch container-fluid">
+            <h2 class="d-flex space-between">Weather App</h2>
+            <h5 id="currentCity">current city: </h5>
+        </div>
+    </nav>
+
+<!-- Section for days of the week-->
+    <section  class="container d-flex justify-content-between">
+    </section>
+
+
+
+<!--Map -->
+    <div class="container">
+        <div id="map" style='width: 600px; height: 400px;' class="mx-auto mt-5"></div>
+    </div>
+
+<!--Custom script-->
+<script src="js/weather-map.js"></script>
+
+</body>
+</html>
