@@ -31,7 +31,7 @@
     <nav class="navbar navbar-dark bg-primary">
         <div id="switch" class="form-check form-switch container-fluid">
             <h2 class="d-flex space-between">Weather App</h2>
-            <h5 id="currentCity">current city: </h5>
+            <h5 id="currentCity"></h5>
         </div>
     </nav>
 
@@ -41,9 +41,17 @@
 
 
 <!--Map -->
-    <div class="container">
+
         <div id="map" style='width: 600px; height: 400px;' class="mx-auto mt-5"></div>
-    </div>
+
+
+<div class="input-group justify-content-center">
+<label class="form-label m-2 me-4" for="form1">Place</label>
+<div class="form-outline">
+    <input type="search" id="form1" class="form-control" />
+</div>
+<button type="button" class="btn btn-primary ms-4" id="setMarkerButton"> Find</button>
+</div>
 
 <!--Custom script-->
 <script src="js/weather-map.js"></script>
