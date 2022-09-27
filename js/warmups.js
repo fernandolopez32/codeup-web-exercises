@@ -570,6 +570,8 @@ function removeABC(string){
 //  * If the given string does not contain "a", "b", or "c", return null.
 //  */
 //
+
+
 //
 //  Write a function called removeBs that takes in an array of strings and returns an array of strings with all b's removed from each string. Assume the array contains only string elements.
 //
@@ -578,6 +580,27 @@ function removeABC(string){
 // removeBs(['abc', 'ab', 'cat', 'Bay']) // returns ['ac', 'a', 'cat', 'ay']
 //
 //
+let stringArray = ['abc', 'ab', 'cat', 'Bay']
+//first attempt wit for Each loop
+function removeBs (array){
+    //accumulator
+    let newArray = []
+    //for this i will use an index
+    array.forEach((string, index)=>{
+    //index is added to the accumulator to store every element of the array
+        newArray[index] = string.toLowerCase().replaceAll('b','');
+    // set this = because we are only storing the return NOT += because we are not adding the strings
+    })
+
+    return newArray
+}
+
+// function removeBs (array){
+//     for (let i =0; i < array.length; i++){
+//
+//     }
+// }
+
 //
 //
 //
