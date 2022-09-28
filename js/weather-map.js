@@ -24,6 +24,18 @@ $(function (){
 
         /* this is the end of WEATHER API */
     });
+
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPEN_WEATHER_APPID,
+        lat:    29.423017,
+        lon:   -98.48527,
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data.list[0].dt_txt.split(" "))
+//logg the current city name
+        $('#currentCity').text(`Current city: ${data.city.name}`);
+    });
+
 updateWeather();
 
 // Search bar and submit button create marker
