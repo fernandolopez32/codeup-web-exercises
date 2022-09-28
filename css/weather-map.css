@@ -1,0 +1,14 @@
+
+
+
+.card{
+    height: 30%;
+    width: 80%
+}
+/* large media query*/
+@media screen and (min-width:992px) {
+    .card {
+        height:80vh;
+        width: 18%;
+    }
+}
