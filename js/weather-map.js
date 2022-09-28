@@ -22,11 +22,11 @@ $(function (){
         lon:   -98.48527,
         units: "imperial"
     }).done(function(data) {
-        console.log(data.list[0].dt_txt.split(" "))
 //logg the current city name
         $('#currentCity').text(`Current city: ${data.city.name}`);
         data.list.forEach((forecast,index)=> {
             if (index % 8 === 0)
+                console.log(forecast);
                 // console.log(forecast.weather[0].icon);
                 $('section').append(`
         <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
@@ -47,17 +47,7 @@ $(function (){
 // end of default weather
 
 
-// Search bar and submit button create marker
-    document.getElementById("setMarkerButton").addEventListener('click',function (e){
-        e.preventDefault();
-        const address = document.getElementById('form1').value;
-        geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
-            console.log(coordinates)
-            const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
-            map.setCenter(coordinates);
-            updateWeather(coordinates);
-        })
-    });
+
 //function to make the cards after each search
     function printWeather(data){
         $('.container').empty();
@@ -94,5 +84,17 @@ $(function (){
             printWeather(data)
         });
     }
+
+// Search bar and submit button create marker
+    document.getElementById("setMarkerButton").addEventListener('click',function (e){
+        e.preventDefault();
+        const address = document.getElementById('form1').value;
+        geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
+            console.log(coordinates)
+            const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
+            map.setCenter(coordinates);
+            updateWeather(coordinates);
+        })
+    });
 
 });
