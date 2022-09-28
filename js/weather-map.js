@@ -1,7 +1,8 @@
 $(function (){
 
 // map display on screen
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZmVybmFuZG9sb3BleiIsImEiOiJjbDhlcHBtYncwdXh0M3ZrOTkzcXVkYTJ1In0.U9pGhWUgH8WGFMATBAhcXg';
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    const coordinates = document.getElementById('coordinates')
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -12,7 +13,25 @@ $(function (){
     map.on('style.load', () => {
         map.setFog({}); // Set the default atmosphere style
         map.setCenter([-98.495141, 29.4246]);
+    });
+    const marker = new mapboxgl.Marker({
+        draggable: true
     })
+        .setLngLat([-98.495141, 29.4246])
+        .addTo(map);
+
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+        let coords = [
+            `${lngLat.lng}`,
+            `${lngLat.lat}`
+        ]
+        updateWeather(coords);
+    }
+    marker.on('dragend', onDragEnd);
+
 //end of map
 
 //default weather for San antonio
@@ -70,18 +89,19 @@ $(function (){
     }
 
 
-    function updateWeather(coordinates){
+    function updateWeather(coordinates) {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
-            lat:    coordinates[1],
-            lon:   coordinates[0],
+            lat: coordinates[1],
+            lon: coordinates[0],
             units: "imperial"
-        }).done(function(data) {
+        }).done(function (data) {
             $('#currentCity').text(`Current city: ${data.city.name}`);
 
             printWeather(data)
         });
     }
+
 
 // Search bar and submit button create marker
     document.getElementById("setMarkerButton").addEventListener('click',function (e){
