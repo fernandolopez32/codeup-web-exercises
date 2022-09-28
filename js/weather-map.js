@@ -50,6 +50,7 @@ $(function (){
             <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
             <div class="card-body">
                 <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
+                <p>${data.list[index].main.temp}&#8457</p>
                 <p>Desctiption: ${data.list[index].weather[0].description}</p>
             </div>
            
