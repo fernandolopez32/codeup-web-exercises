@@ -21,21 +21,7 @@ $(function (){
     }).done(function(data) {
         console.log(data)
         console.log(data.weather[0].main)
-        if (data.weather[0].main === 'Clear'){
-            $("body").css({
-            'background-image': 'url("../img/sunny.jpg")',
-            'background-repeat': 'no-repeat',
-            'background-size': 'cover'
-            });
 
-        } else if (data.weather[0].main === 'Clear'){
-            $("body").css({
-                'background-image': 'url("../img/sunny.jpg")',
-                'background-repeat': 'no-repeat',
-                'background-size': 'cover'
-            });
-
-        }
         /* this is the end of WEATHER API */
     });
 
@@ -50,7 +36,7 @@ $(function (){
 //         $('#currentCity').text(`Current city: ${data.city.name}`);
 //     });
 
-
+updateWeather();
 
 // Search bar and submit button create marker
     document.getElementById("setMarkerButton").addEventListener('click',function (e){
@@ -59,7 +45,6 @@ $(function (){
         geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
             console.log(coordinates)
             const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
-
             map.setCenter(coordinates);
             updateWeather(coordinates);
         })
@@ -69,10 +54,15 @@ $(function (){
         $('.container').empty();
         data.list.forEach((forecast,index)=> {
             if (index % 8 === 0)
+                // console.log(forecast.weather[0].icon);
                 $('section').append(`
         <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
             <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
-            <p class="card-body">Desctiption: ${data.list[index].weather[0].description}</p>
+            <div class="card-body">
+                <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
+                <p>Desctiption: ${data.list[index].weather[0].description}</p>
+            </div>
+           
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
                 <li class="list-group-item">Wind: ${data.list[index].wind.speed} MPH</li>
@@ -82,7 +72,7 @@ $(function (){
         });
     }
 
-    function updateWeather(coordinates){
+    function updateWeather(coordinates = [29.42683435532012, -98.48944937443318]){
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
             lat:    coordinates[1],
@@ -94,4 +84,25 @@ $(function (){
             printWeather(data)
         });
     }
+
+    // function updateBg(coordinates){
+    //     $.get("http://api.openweathermap.org/data/2.5/weather", {
+    //         APPID: OPEN_WEATHER_APPID,
+    //         lat: coordinates[1],
+    //         log: coordinates[0],
+    //         units: "imperial"
+    //     }).done(function(data) {
+    //         console.log(data)
+    //         if (data.weather[0].main === 'Clear'){
+    //             $("body").css({
+    //                 'background-image': 'url("../img/sunny.jpg")',
+    //                 'background-repeat': 'no-repeat',
+    //                 'background-size': 'cover'
+    //             });
+    //
+    //         }
+    //     });
+    // }
+
+
 });
