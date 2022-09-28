@@ -1,4 +1,23 @@
 
+body{
+    background-image: url("../img/sunny.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
 
 
 .card{
@@ -9,6 +28,10 @@
 #forecast{
     overflow: scroll;
     height: 120vh;
+}
+#map{
+    border-radius: 200px;
+
 }
 /* large media query*/
 @media screen and (min-width:992px) {

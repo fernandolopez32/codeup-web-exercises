@@ -40,6 +40,7 @@ function geocode(search, token) {
  *  })
  *
  */
+
 function reverseGeocode(coordinates, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
@@ -52,7 +53,6 @@ function reverseGeocode(coordinates, token) {
             return data.features[0].place_name;
         });
 }
-// util functions
 //function for cardinal directions from degrees
 function windCardinalDirection(degrees){
     let cardinalDirection = '';
