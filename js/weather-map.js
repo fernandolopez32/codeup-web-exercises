@@ -1,6 +1,7 @@
 $(function (){
+
     // map display on screen
-    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZmVybmFuZG9sb3BleiIsImEiOiJjbDhlcHBtYncwdXh0M3ZrOTkzcXVkYTJ1In0.U9pGhWUgH8WGFMATBAhcXg';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -19,8 +20,23 @@ $(function (){
         units: "imperial"
     }).done(function(data) {
         console.log(data)
+        console.log(data.weather[0].main)
+
         /* this is the end of WEATHER API */
     });
+
+//     $.get("http://api.openweathermap.org/data/2.5/forecast", {
+//         APPID: OPEN_WEATHER_APPID,
+//         lat:    29.423017,
+//         lon:   -98.48527,
+//         units: "imperial"
+//     }).done(function(data) {
+//         console.log(data.list[0].dt_txt.split(" "))
+// //logg the current city name
+//         $('#currentCity').text(`Current city: ${data.city.name}`);
+//     });
+
+updateWeather();
 
 // Search bar and submit button create marker
     document.getElementById("setMarkerButton").addEventListener('click',function (e){
@@ -32,7 +48,7 @@ $(function (){
             map.setCenter(coordinates);
             updateWeather(coordinates);
         })
-    });
+    })
 
     function printWeather(data){
         $('.container').empty();
@@ -41,15 +57,16 @@ $(function (){
                 // console.log(forecast.weather[0].icon);
                 $('section').append(`
         <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
-            <div class="card-header p-3">$forecast[index].dt_txt.split(" ")[0]}</div>
+            <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
             <div class="card-body">
                 <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
-                <p>Desctiption: ${forecast[index].weather[0].description}</p>
+                <p>Desctiption: ${data.list[index].weather[0].description}</p>
             </div>
+           
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Humidity: ${forecast[index].main.humidity}%</li>
-                <li class="list-group-item">Wind: ${forecast[index].wind.speed} MPH</li>
-                <li class="list-group-item">Pressure: ${forecast[index].main.pressure} </li>
+                <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} MPH</li>
+                <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
             </ul>
         </div>`)
         });
@@ -62,13 +79,30 @@ $(function (){
             lon:   coordinates[0],
             units: "imperial"
         }).done(function(data) {
-            console.log(data.city.name)
             $('#currentCity').text(`Current city: ${data.city.name}`);
 
             printWeather(data)
         });
     }
 
+    // function updateBg(coordinates){
+    //     $.get("http://api.openweathermap.org/data/2.5/weather", {
+    //         APPID: OPEN_WEATHER_APPID,
+    //         lat: coordinates[1],
+    //         log: coordinates[0],
+    //         units: "imperial"
+    //     }).done(function(data) {
+    //         console.log(data)
+    //         if (data.weather[0].main === 'Clear'){
+    //             $("body").css({
+    //                 'background-image': 'url("../img/sunny.jpg")',
+    //                 'background-repeat': 'no-repeat',
+    //                 'background-size': 'cover'
+    //             });
+    //
+    //         }
+    //     });
+    // }
 
 
 });
