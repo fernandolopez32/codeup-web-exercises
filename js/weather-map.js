@@ -54,7 +54,7 @@ $(function (){
         data.list.forEach((forecast,index)=> {
             if (index % 8 === 0)
                 $('section').append(`
-        <div class="card col-8 col-md-3 mt-4 mx-auto px-0">
+        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
             <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
             <p class="card-body">Desctiption: ${data.list[index].weather[0].description}</p>
             <ul class="list-group list-group-flush">
