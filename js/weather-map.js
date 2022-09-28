@@ -24,18 +24,6 @@ $(function (){
 
         /* this is the end of WEATHER API */
     });
-
-//     $.get("http://api.openweathermap.org/data/2.5/forecast", {
-//         APPID: OPEN_WEATHER_APPID,
-//         lat:    29.423017,
-//         lon:   -98.48527,
-//         units: "imperial"
-//     }).done(function(data) {
-//         console.log(data.list[0].dt_txt.split(" "))
-// //logg the current city name
-//         $('#currentCity').text(`Current city: ${data.city.name}`);
-//     });
-
 updateWeather();
 
 // Search bar and submit button create marker
@@ -48,7 +36,7 @@ updateWeather();
             map.setCenter(coordinates);
             updateWeather(coordinates);
         })
-    })
+    });
 
     function printWeather(data){
         $('.container').empty();
@@ -84,25 +72,5 @@ updateWeather();
             printWeather(data)
         });
     }
-
-    // function updateBg(coordinates){
-    //     $.get("http://api.openweathermap.org/data/2.5/weather", {
-    //         APPID: OPEN_WEATHER_APPID,
-    //         lat: coordinates[1],
-    //         log: coordinates[0],
-    //         units: "imperial"
-    //     }).done(function(data) {
-    //         console.log(data)
-    //         if (data.weather[0].main === 'Clear'){
-    //             $("body").css({
-    //                 'background-image': 'url("../img/sunny.jpg")',
-    //                 'background-repeat': 'no-repeat',
-    //                 'background-size': 'cover'
-    //             });
-    //
-    //         }
-    //     });
-    // }
-
 
 });
