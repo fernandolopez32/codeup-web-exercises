@@ -5,41 +5,57 @@ $(function (){
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 3, // starting zoom
+        center: [-98.495141, 29.4246], // starting position [lng, lat]
+        zoom: 9, // starting zoom
         projection: 'globe' // display the map as a 3D globe
     });
     map.on('style.load', () => {
         map.setFog({}); // Set the default atmosphere style
-        map.setCenter([-101.83123, 35.206865]);
+        map.setCenter([-98.495141, 29.4246]);
     })
 
     $.get("http://api.openweathermap.org/data/2.5/weather", {
         APPID: OPEN_WEATHER_APPID,
-        q:     "San Antonio, US"
+        q:     "San Antonio, US",
+        units: "imperial"
     }).done(function(data) {
-        console.log(data);
+        console.log(data)
+        console.log(data.weather[0].main)
+        if (data.weather[0].main === 'Clear'){
+            $("body").css({
+            'background-image': 'url("../img/sunny.jpg")',
+            'background-repeat': 'no-repeat',
+            'background-size': 'cover'
+            });
+
+        } else if (data.weather[0].main === 'Clear'){
+            $("body").css({
+                'background-image': 'url("../img/sunny.jpg")',
+                'background-repeat': 'no-repeat',
+                'background-size': 'cover'
+            });
+
+        }
         /* this is the end of WEATHER API */
     });
 
-    $.get("http://api.openweathermap.org/data/2.5/forecast", {
-        APPID: OPEN_WEATHER_APPID,
-        lat:    29.423017,
-        lon:   -98.48527,
-        units: "imperial"
-    }).done(function(data) {
-        console.log(data.list[0].dt_txt.split(" "))
-//logg the current city name
-        $('#currentCity').text(`Current city: ${data.city.name}`);
-    });
+//     $.get("http://api.openweathermap.org/data/2.5/forecast", {
+//         APPID: OPEN_WEATHER_APPID,
+//         lat:    29.423017,
+//         lon:   -98.48527,
+//         units: "imperial"
+//     }).done(function(data) {
+//         console.log(data.list[0].dt_txt.split(" "))
+// //logg the current city name
+//         $('#currentCity').text(`Current city: ${data.city.name}`);
+//     });
 
 
 
 // Search bar and submit button create marker
     document.getElementById("setMarkerButton").addEventListener('click',function (e){
         e.preventDefault();
-        const address = document.getElementById('form1')
-            .value;
+        const address = document.getElementById('form1').value;
         geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
             console.log(coordinates)
             const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
@@ -78,5 +94,4 @@ $(function (){
             printWeather(data)
         });
     }
-
-})
+});
