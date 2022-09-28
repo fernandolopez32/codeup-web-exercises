@@ -1,6 +1,6 @@
 $(function (){
 
-    // map display on screen
+// map display on screen
     mapboxgl.accessToken = 'pk.eyJ1IjoiZmVybmFuZG9sb3BleiIsImEiOiJjbDhlcHBtYncwdXh0M3ZrOTkzcXVkYTJ1In0.U9pGhWUgH8WGFMATBAhcXg';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -13,18 +13,9 @@ $(function (){
         map.setFog({}); // Set the default atmosphere style
         map.setCenter([-98.495141, 29.4246]);
     })
+//end of map
 
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID: OPEN_WEATHER_APPID,
-        q:     "San Antonio, US",
-        units: "imperial"
-    }).done(function(data) {
-        console.log(data)
-        console.log(data.weather[0].main)
-
-        /* this is the end of WEATHER API */
-    });
-
+//default weather for San antonio
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat:    29.423017,
@@ -34,9 +25,27 @@ $(function (){
         console.log(data.list[0].dt_txt.split(" "))
 //logg the current city name
         $('#currentCity').text(`Current city: ${data.city.name}`);
+        data.list.forEach((forecast,index)=> {
+            if (index % 8 === 0)
+                // console.log(forecast.weather[0].icon);
+                $('section').append(`
+        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
+            <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
+            <div class="card-body">
+                <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
+                <p>Desctiption: ${data.list[index].weather[0].description}</p>
+            </div>
+           
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} MPH</li>
+                <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
+            </ul>
+        </div>`)
+        });
     });
+// end of default weather
 
-updateWeather();
 
 // Search bar and submit button create marker
     document.getElementById("setMarkerButton").addEventListener('click',function (e){
@@ -49,7 +58,7 @@ updateWeather();
             updateWeather(coordinates);
         })
     });
-
+//function to make the cards after each search
     function printWeather(data){
         $('.container').empty();
         data.list.forEach((forecast,index)=> {
@@ -72,7 +81,8 @@ updateWeather();
         });
     }
 
-    function updateWeather(coordinates = [29.42683435532012, -98.48944937443318]){
+
+    function updateWeather(coordinates){
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
             lat:    coordinates[1],
