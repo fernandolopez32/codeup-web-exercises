@@ -45,9 +45,10 @@ $(function (){
         $('#currentCity').text(`Current city: ${data.city.name}`);
         data.list.forEach((forecast,index)=> {
             if (index % 8 === 0)
+                console.log(forecast.wind.deg)
                 $('section').append(`
-        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
-            <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
+        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0 opacity-75">
+            <header class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</header>
             <div class="card-body">
                 <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
                 <p>${data.list[index].main.temp}&#8457</p>
@@ -56,7 +57,7 @@ $(function (){
            
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
-                <li class="list-group-item">Wind: ${data.list[index].wind.speed} MPH</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H</li>
                 <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
             </ul>
         </div>`)
@@ -73,7 +74,7 @@ $(function (){
             if (index % 8 === 0)
                 // console.log(forecast.weather[0].icon);
                 $('section').append(`
-        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0">
+        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0 opacity-75">
             <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
             <div class="card-body">
                 <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
@@ -82,7 +83,7 @@ $(function (){
            
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
-                <li class="list-group-item">Wind: ${data.list[index].wind.speed} MPH</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H</li>
                 <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
             </ul>
         </div>`)
@@ -110,9 +111,10 @@ $(function (){
         const address = document.getElementById('form1').value;
         geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
             console.log(coordinates)
-            const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
+            const userMarker = new mapboxgl.Marker({draggable: true}).setLngLat(coordinates).addTo(map)
             map.setCenter(coordinates);
             updateWeather(coordinates);
+            onDragEnd(coordinates);
         })
     });
 
