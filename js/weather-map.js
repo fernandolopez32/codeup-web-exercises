@@ -42,22 +42,22 @@ $(function (){
         units: "imperial"
     }).done(function(data) {
 //logg the current city name
+        console.log(formatTime(data.list[0].dt).split(',')[1])
         $('#currentCity').text(`Current city: ${data.city.name}`);
         data.list.forEach((forecast,index)=> {
             if (index % 8 === 0)
-                console.log(forecast.wind.deg)
                 $('section').append(`
         <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0 opacity-75">
-            <header class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</header>
+            <header class="card-header p-3">${formatTime(data.list[index].dt).split(",")[0]}</header>
             <div class="card-body">
                 <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
-                <p>${data.list[index].main.temp}&#8457</p>
+                <p>Temp at: ${formatTime(data.list[0].dt).split(',')[1]} will be ${data.list[index].main.temp}&#8457</p>
                 <p>Desctiption: ${data.list[index].weather[0].description}</p>
             </div>
            
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
-                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H ${windCardinalDirection(forecast.wind.deg)}</li>
                 <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
             </ul>
         </div>`)
@@ -72,18 +72,18 @@ $(function (){
         $('.container').empty();
         data.list.forEach((forecast,index)=> {
             if (index % 8 === 0)
-                // console.log(forecast.weather[0].icon);
                 $('section').append(`
         <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0 opacity-75">
-            <div class="card-header p-3">${data.list[index].dt_txt.split(" ")[0]}</div>
+            <header class="card-header p-3">${formatTime(data.list[index].dt).split(",")[0]}</header>
             <div class="card-body">
                 <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
+                <p>Currently: ${data.list[index].main.temp}&#8457</p>
                 <p>Desctiption: ${data.list[index].weather[0].description}</p>
             </div>
            
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
-                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H ${windCardinalDirection(data.list[index].wind.deg)}</li>
                 <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
             </ul>
         </div>`)

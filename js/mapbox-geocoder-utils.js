@@ -109,7 +109,7 @@ function formatTime(timeStamp){
     let hour = appendLeadingZeroes(dateTime.getHours());
     let minutes = appendLeadingZeroes(dateTime.getMinutes());
     let seconds = appendLeadingZeroes(dateTime.getSeconds());
-    let formattedDateTime = month + " " + day + " " + year + " " + hour + ":" + minutes + ":" + seconds;
+    let formattedDateTime = month + " " + day + " " + year + " ," + hour + ":" + minutes + ":" + seconds;
     return formattedDateTime;
 }
 
