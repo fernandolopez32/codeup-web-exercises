@@ -54,7 +54,6 @@ $(function (){
                 <p>Temp at: ${formatTime(data.list[0].dt).split(',')[1]} will be ${data.list[index].main.temp}&#8457</p>
                 <p>Desctiption: ${data.list[index].weather[0].description}</p>
             </div>
-           
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
                 <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H ${windCardinalDirection(forecast.wind.deg)}</li>
@@ -111,11 +110,11 @@ $(function (){
         const address = document.getElementById('form1').value;
         geocode(address,MAPBOX_API_TOKEN).then(function (coordinates){
             console.log(coordinates)
-            const userMarker = new mapboxgl.Marker({draggable: true}).setLngLat(coordinates).addTo(map)
+            const userMarker = new mapboxgl.Marker({draggable: true}).setLngLat(coordinates).addTo(map);
             map.setCenter(coordinates);
             updateWeather(coordinates);
             onDragEnd(coordinates);
-        })
+        });
     });
 
 });
