@@ -49,9 +49,10 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach((user)=> {
+users.forEach((user) => {
   return emails.push(user.email);
 });
+
 users.forEach((user)=> {
   return names.push(user.name);
 });
@@ -67,16 +68,17 @@ users.forEach(function(user) {
   const {languages} = user;
 
   // TODO: rewrite the assignment below to use template strings
-  developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+  developers.push(`${name}'s email is ${email} ${name} knows ${languages.join(', ')}`);
 });
 
 // TODO: Use `let` for the following variable
 let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
-developers.forEach(function (developer) {
+ for (let developer  of developers) {
 
   // TODO: rewrite the assignment below to use template strings
-  list += '<li>' + developer + '</li>';
-});
+  list += `<li>${developer}</li>`;
+}
+
 list += '</ul>';
