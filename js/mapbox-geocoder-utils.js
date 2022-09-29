@@ -40,7 +40,7 @@ function geocode(search, token) {
  *  })
  *
  */
-
+// getting the coordinates from the input
 function reverseGeocode(coordinates, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
@@ -53,6 +53,7 @@ function reverseGeocode(coordinates, token) {
             return data.features[0].place_name;
         });
 }
+
 //function for cardinal directions from degrees
 function windCardinalDirection(degrees){
     let cardinalDirection = '';
@@ -92,15 +93,14 @@ function windCardinalDirection(degrees){
     return cardinalDirection;
 }
 
+// this gives me the date in different format
 function appendLeadingZeroes(n){
     if(n <= 9){
         return "0" + n;
     }
     return n;
 }
-
 const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-
 function formatTime(timeStamp){
     let dateTime = new Date(timeStamp * 1000);
     let year = dateTime.getFullYear();
@@ -113,20 +113,27 @@ function formatTime(timeStamp){
     return formattedDateTime;
 }
 
-function mostFrequent(array){
-    const arrayElementsCount = array.reduce(function(total, element){
-        if (!total[element]) {
-            total[element] = 1;
-        } else {
-            total[element] = total[element] + 1;
-        }
-        return total;
-    }, {});
-    const arraySorted = Object.entries(arrayElementsCount).sort(function(a, b){
-        return b[1] - a[1];
+//function to make the cards after each search
+function printWeather(data){
+    $('.container').empty();
+    data.list.forEach((forecast,index)=> {
+        if (index % 8 === 0)
+            $('section').append(`
+        <div class="card col-8 col-md-3 mt-4 mx-auto my-3 px-0 opacity-75">
+            <header class="card-header p-3">${formatTime(data.list[index].dt).split(",")[0]}</header>
+            <div class="card-body">
+                <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="weather symbol"> 
+                <p>Currently: ${data.list[index].main.temp}&#8457</p>
+                <p>Desctiption: ${data.list[index].weather[0].description}</p>
+            </div>
+           
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Humidity: ${data.list[index].main.humidity}%</li>
+                <li class="list-group-item">Wind: ${data.list[index].wind.speed} M/H ${windCardinalDirection(data.list[index].wind.deg)}</li>
+                <li class="list-group-item">Pressure: ${data.list[index].main.pressure} </li>
+            </ul>
+        </div>`)
     });
-    return arraySorted[0][0];
 }
-
 
 //end of util functions
