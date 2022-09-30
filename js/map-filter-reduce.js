@@ -46,15 +46,19 @@ const atLeast3Languages = users.filter((user)=> user.languages.length > 3);
 // const userEmails = users.map((user) => {
 //     return user.email
 // });
-const userEmails = users.map((user) => user.yearsOfExperience);
-console.log(userEmails.length);
+const userEmails = users.map((user) => user.email);
+// console.log(userEmails);
 
-let totalYears = users.reduce(function (prev, current ,i,array)  {
-    total = prev + current.yearsOfExperience
-    devider = array.map((e) => e.yearsOfExperience)
-    return total/devider.length
-},0);
+// let totalYears = users.reduce(function (prev, current ,i,array)  {
+//     return prev + current.yearsOfExperience/ array.length;
+// },0);
 
-// let totalYears = users.reduce((prev, current ) => prev + current.yearsOfExperience, 0)
+let totalYears = users.reduce((prev, current,i,array ) => prev + current.yearsOfExperience/array.length, 0);
 
 console.log(totalYears);
+
+let longestEmail = users.reduce((acc, currentValue) => {
+    return acc + currentValue
+
+},);
+console.log(longestEmail);
