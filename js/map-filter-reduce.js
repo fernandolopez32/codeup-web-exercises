@@ -55,10 +55,17 @@ const userEmails = users.map((user) => user.email);
 
 let totalYears = users.reduce((prev, current,i,array ) => prev + current.yearsOfExperience/array.length, 0);
 
-console.log(totalYears);
+// console.log(totalYears);
 
-let longestEmail = users.reduce((acc, currentValue) => {
-    return acc + currentValue
-
-},);
+let longestEmail = users.reduce((result, currentValue) => {
+    if(result.length < currentValue.email.length){
+        return currentValue.email;
+    }
+    return result
+},'');
 console.log(longestEmail);
+
+// const listOfInstructors = users.reduce((acc, current) =>{
+//    return acc + 'Your instructors are: ' +current.name +' ';
+// },'Your instructors are: ');
+// console.log(listOfInstructors)
