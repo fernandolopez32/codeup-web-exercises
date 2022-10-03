@@ -71,11 +71,18 @@ const listOfInstructors = users.reduce((acc, current) =>{
 },'Your instructors are: ');
 console.log(listOfInstructors);
 
-const arrayOfLanguages = users.reduce((result, current) =>{
-    console.log(current.languages)
-    if(current.includes(current.languages)){
-        return result.push();
-    }
-    return result
-)},[]);
+const arrayOfLanguages = users.reduce((result, current,i) => {
+    return result + current.languages + ' '
+},[]);
 console.log(arrayOfLanguages);
+
+
+let newArray = [];
+users.forEach((e)=> {
+    if(!newArray.includes(...e.languages)){
+        newArray.push(...e.languages);
+        console.log(newArray)
+    }
+    return newArray
+})
+console.log(newArray)
