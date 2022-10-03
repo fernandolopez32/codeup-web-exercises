@@ -57,15 +57,21 @@ let totalYears = users.reduce((prev, current,i,array ) => prev + current.yearsOf
 
 // console.log(totalYears);
 
-// let longestEmail = users.reduce((result, currentValue) => {
-//     if(result.length < currentValue.email.length){
-//         return currentValue.email;
-//     }
-//     return result
-// },'');
-// console.log(longestEmail);
+let longestEmail = users.reduce((result, currentValue) => {
+    if(result.length < currentValue.email.length){
+        return currentValue.email;
+    }
+    return result
+},'');
+
+console.log(longestEmail);
 
 const listOfInstructors = users.reduce((acc, current) =>{
    return acc + current.name +' ';
 },'Your instructors are: ');
-console.log(listOfInstructors)
+console.log(listOfInstructors);
+
+const arrayOfLanguages = users.reduce((result, current) =>{
+    return result + current.languages
+},[]);
+console.log(arrayOfLanguages);
