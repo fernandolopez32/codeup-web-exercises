@@ -76,7 +76,6 @@ const arrayOfLanguages = users.reduce((result, current,i) => {
             if(!result.includes(e)){
                 return result.push(e);
             }
-            console.log(e);
         });
     return result
 },[]);

@@ -623,3 +623,21 @@ function removeBs (array){
 // Write a function that accepts an array of bowling scores and returns the highest
 //
 // Write a function that accepts an array of bowling scores and returns true if the highest score is divisible by 3
+
+
+
+// DOM TEST PREP
+
+$(function (){
+// When the user clicks the button that has the text "Change Heading", the
+// text of the <h1> element changes to read "I pwn the DOM"
+    $('button').on('click',function (){
+        $('h1').text('I own the dom') ;
+    });
+// Every time the user enters a character in the input with id "source", that
+// character appears in the <p> element with the id "output"
+    $('#source').on('keyup',function (){
+       $('#output').text($('#source').val());
+    });
+
+});
