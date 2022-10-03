@@ -72,6 +72,10 @@ const listOfInstructors = users.reduce((acc, current) =>{
 console.log(listOfInstructors);
 
 const arrayOfLanguages = users.reduce((result, current) =>{
-    return result + current.languages
-},[]);
+    console.log(current.languages)
+    if(current.includes(current.languages)){
+        return result.push();
+    }
+    return result
+)},[]);
 console.log(arrayOfLanguages);
