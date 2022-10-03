@@ -77,14 +77,14 @@
     // })
     // console.log(newDessert);
 
-    const under10k = cars.filter(car => car.mileage < 10000);
-    console.log(under10k);
-    console.log(under10k[0].mileage);
-
-    under10k.forEach(({make,model,mileage},index) =>{
-        output += `<p>I found a ${make} ${model} with ${mileage} miles </p>`;
-        $('#output').html(output);
-    });
+    // const under10k = cars.filter(car => car.mileage < 10000);
+    // console.log(under10k);
+    // console.log(under10k[0].mileage);
+    //
+    // under10k.forEach(({make,model,mileage},index) =>{
+    //     output += `<p>I found a ${make} ${model} with ${mileage} miles </p>`;
+    //     $('#output').html(output);
+    // });
 
      prices.filter(price => price < 10).map(price =>{
         const tax = (price * 0.0825).toFixed(2);
@@ -94,11 +94,33 @@
 
     // console.log(under10dollarsWithTax)
 
-    const totalCost = prices.reduce(function(total, itemPrice, index){
-        console.log(`The index is ${index}, the total is ${total}, the itemPrice is ${itemPrice}`);
-        return total + itemPrice;
-    });
+    // const totalCost = prices.reduce(function(total, itemPrice, index,array){
+    //     console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the itemPrice is ${itemPrice}`);
+    //     return total + itemPrice;
+    // });
 
-    console.log(totalCost);
-    $("#output").append(`<p>The total is ${totalCost}</p>`);
+    // console.log(totalCost);
+    // $("#output").append(`<p>The total is ${totalCost}</p>`);
 
+// function passed to reduce method takes an accumulator parameter
+// accumulator is often abr to ACC
+
+
+// getting the average of
+
+    const averagePrice = prices.reduce((function (acc,curr, i,array){
+        acc = acc + curr;
+        if(i === array.length -1) {
+            return acc/array.length;
+        }
+    return acc
+    }));
+    console.log(averagePrice);
+
+    console.log('You have 156.39 in your shopping cart.')
+
+    const total = prices.reduce((acc,curr) =>{
+        return acc + curr;
+    },156.39)
+
+    console.log(`Your new total is now ${total.toFixed(2)}`);
