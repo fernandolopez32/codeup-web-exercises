@@ -72,17 +72,18 @@ const listOfInstructors = users.reduce((acc, current) =>{
 console.log(listOfInstructors);
 
 const arrayOfLanguages = users.reduce((result, current,i) => {
-   let answer = ''
-    current.languages.forEach((e) =>{
-        console.log(e);
-        return answer + e
-    });
-    return answer
-});
+        current.languages.forEach((e) =>{
+            if(!result.includes(e)){
+                return result.push(e);
+            }
+            console.log(e);
+        });
+    return result
+},[]);
 
 console.log(arrayOfLanguages);
 
-
+//
 // let newArray = [];
 // users.forEach((e)=> {
 //     if(!newArray.includes(...e.languages)){
