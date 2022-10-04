@@ -76,3 +76,23 @@ modification = {
         lastName:  "kelly"
     }
 }
+
+
+// D in CRUD: Delete
+
+const deleteOptions ={
+    method: 'DELETE',
+    headers: {
+        'ContentType' : 'application/json'
+    }
+}
+fetch(booksURL + '/1',deleteOptions).then(getBooks);
+
+
+
+
+
+
+
+
+
