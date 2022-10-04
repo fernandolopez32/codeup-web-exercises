@@ -10,16 +10,31 @@
             background-color: black;
             color: white;
         }
+        h2{
+            border: 2px solid white;
+        }
+        .hotpink{
+            color: hotpink;
+        }
     </style>
 </head>
 <body>
     <h1>Warm ups</h1>
-    <button>Change Heading</button>
+    <button id="changeHeader">Change Heading</button>
     <br>
+    <div id="loremParagraphs">
+        <h2>Lorem Generator</h2>
+        <button id="hotPinkIt">Hot Pink It</button>
+        <br>
+        <br>
+        <button id="pinkBlicky">Pink Blinky</button>
+    </div>
     <br>
     <label for="source">Input for paragraph</label>
     <input type="text" id="source">
     <p id="output"></p>
+
+
 <script src = "js/utils.js"></script>
 <script src = "js/warmups.js"></script>
 <!--<script src="js/es6.js"></script>-->

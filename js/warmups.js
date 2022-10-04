@@ -631,13 +631,31 @@ function removeBs (array){
 $(function (){
 // When the user clicks the button that has the text "Change Heading", the
 // text of the <h1> element changes to read "I pwn the DOM"
-    $('button').on('click',function (){
+    $('#changeHeader').on('click',function (){
         $('h1').text('I own the dom') ;
     });
 // Every time the user enters a character in the input with id "source", that
 // character appears in the <p> element with the id "output"
     $('#source').on('keyup',function (){
        $('#output').text($('#source').val());
+    });
+// When the mouse enters the h2 with the text "Lorem Generator",
+// A paragraph contain lorem appears in the div with the id of loremParagraphs
+
+    const lorem = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolores harum laborum numquam reprehenderit similique temporibus? A amet cumque eos laboriosam laborum laudantium minima, molestiae praesentium quos, veniam vero voluptatum.</p>"
+
+    $("h2").mouseenter(function (){
+        $('#loremParagraphs').append(lorem);
+    });
+// When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+    $('#hotPinkIt').on('click',function (){
+        $('#loremParagraphs').toggleClass('hotpink');
+    });
+
+    $('#pinkBlicky').on('click',function (){
+       setInterval(function (){
+           $('#loremParagraphs').toggleClass('hotpink');
+       },2000)
     });
 
 });
