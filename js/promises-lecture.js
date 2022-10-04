@@ -66,21 +66,22 @@ const aPromise = new Promise((resolve,reject)=>{
         } else {
             reject("I was rejected!")
         }
-    },100);
+    },2000);
 });
 
 aPromise.then(value => console.log(value)).catch(error => console.log(error));
 
 
 // a fetch call returns an object
-fetch("data/mural1s.json").then(respose => respose.json()).then(data => console.log(data)).catch(error => console.log("Oh no, it didnt work"));
+const myFetchPromise = fetch("data/murals.json").then(respose => {
+        console.log(respose.url);
+        console.log(respose.headers);
+        console.log(respose.status);
+        return respose.json()
+    }
+    ).then(data => console.log(data)).catch(error => console.log("Oh no, it didnt work")).finally(()=>console.log("I'm gonna happen no matter what"));
 
-
-
-
-
-
-
+console.log(myFetchPromise);
 
 
 
