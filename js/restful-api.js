@@ -27,21 +27,21 @@ getMovies()
 
 // C in CRUD:  Create
 
-const bookToPost = {
-    title: 'Lord Of The Rings',
-    author: {
-        firstName: 'someone',
-        lastName: 'somewhere'
-    }
-}
-
-const postOptions = {
-    method: 'POST',
-    header: {
-        'Content-Type' : 'application/json'
-    },
-    body: JSON.stringify(bookToPost)
-}
+// const bookToPost = {
+//     title: 'Lord Of The Rings',
+//     author: {
+//         firstName: 'someone',
+//         lastName: 'somewhere'
+//     }
+// }
+//
+// const postOptions = {
+//     method: 'POST',
+//     header: {
+//         'Content-Type' : 'application/json'
+//     },
+//     body: JSON.stringify(bookToPost)
+// }
 
 function getBooks(){
     fetch(booksURL)
@@ -49,11 +49,29 @@ function getBooks(){
 }
 getBooks();
 
-// fetch(booksURL, postOptions).then(getBooks);
+const bookToPost = {
+    title: "another",
+    author: {
+        firstName: "B",
+        lastName: "Person"
+    }
+}
 
-// U IN crud: Updating with PUT and PATCH request
-// we use put to replace the entire content
-// we use patch to modify only part of the entry
+const postOptions = {
+    method: 'POST',
+    headers: {
+        'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify(bookToPost)
+}
+
+fetch(booksURL, postOptions);
+
+fetch(booksURL, postOptions).then(getBooks);
+
+// // U IN crud: Updating with PUT and PATCH request
+// // we use put to replace the entire content
+// // we use patch to modify only part of the entry
 
 let modification = {
     title: 'Elemore of aquetine: queen of France, Queen  of England'
@@ -76,10 +94,10 @@ modification = {
         lastName:  "kelly"
     }
 }
-
-
-// D in CRUD: Delete
-
+//
+//
+// // D in CRUD: Delete
+//
 const deleteOptions ={
     method: 'DELETE',
     headers: {
@@ -87,12 +105,12 @@ const deleteOptions ={
     }
 }
 fetch(booksURL + '/1',deleteOptions).then(getBooks);
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
