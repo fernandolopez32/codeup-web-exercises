@@ -658,4 +658,10 @@ $(function (){
        },2000)
     });
 
+
+
 });
+
+var myOutput = originalString + " is an example of " + description + " thinking.";
+
+let myOutput1 = `${originalString} is an example of ${description} thinking.`;
